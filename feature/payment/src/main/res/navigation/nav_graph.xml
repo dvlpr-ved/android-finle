@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/processingPaymentFragment">
+
+    <fragment
+        android:id="@+id/processingPaymentFragment"
+        android:name="com.dkglabs.payment.fragments.ProcessingPaymentFragment"
+        android:label="ProcessingPaymentFragment"
+        tools:layout="@layout/fragment_processing_payment" />
+
+    <fragment
+        android:id="@+id/paymentSuccessFragment"
+        android:name="com.dkglabs.payment.fragments.PaymentSuccessFragment"
+        android:label="PaymentSuccessFragment"
+        tools:layout="@layout/fragment_payment_success" />
+
+    <fragment
+        android:id="@+id/paymentFailedFragment"
+        android:name="com.dkglabs.payment.fragments.PaymentFailedFragment"
+        android:label="fragment_payment_failed"
+        tools:layout="@layout/fragment_payment_failed" />
+</navigation>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_miss_call">Give us a miss call</string>
+    <string name="text_contact_us">Contact Us</string>
+    <string name="blank_dashboard_message">Welcome to FINLE! Get started on your financial journey today. Discover how we can help you achieve your financial goals. Explore our loan options and find the perfect fit for your needs. No worries, we\'re here to help you every step of the way.</string>
+    <string name="text_start_loan">Start your application</string>
+    <string name="placeholder_rupee">₹ %1$d</string>
+    <string name="text_due_emi">Due EMI\'s</string>
+    <string name="text_pay_now">Pay now</string>
+    <string name="text_monthly_emi">Monthly EMI</string>
+    <string name="text_paid_emi">Paid EMIs</string>
+    <string name="text_loan">Loan</string>
+    <string name="text_paid_amount">Paid amount</string>
+    <string name="text_due_amount">Due amount</string>
+    <string name="text_emi">EMI\'s</string>
+    <string name="text_emi_amount">EMI (₹)</string>
+    <string name="welcome_dashboard_message">Welcome %1$s</string>
+    <string name="text_confirm_payment">Confirm payment</string>
+    <string name="placeholder_pay_due">Pay due EMI ₹ %1$d</string>
+    <string name="text_choose_payment">Choose payment method</string>
+    <string name="hi_user_name">Hi %1$s !</string>
+    <string name="text_loan_details">Loan Details</string>
+    <string name="frequency">Frequency :</string>
+    <string name="payment_mode">Payment Mode:</string>
+    <string name="emi_paid">EMI Paid</string>
+    <string name="total_emi">Total EMI</string>
+    <string name="pending_emi">Pending EMI</string>
+    <string name="loan_interest">Loan interest</string>
+    <string name="loan_number">Loan number</string>
+    <string name="account_number">Account number</string>
+    <string name="loan_type">Loan type</string>
+    <string name="loan_tenure">Loan tenure</string>
+    <string name="interest_rate">Interest rate</string>
+    <string name="view_all">View all</string>
+</resources>

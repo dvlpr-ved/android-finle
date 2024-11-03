@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_phone.xml"
+    app:startDestination="@id/phoneFragment">
+
+    <fragment
+        android:id="@+id/phoneFragment"
+        android:name="com.dkglabs.auth.fragments.PhoneFragment"
+        android:label="PhoneFragment"
+        tools:layout="@layout/fragment_phone">
+        <action
+            android:id="@+id/action_phoneFragment_to_otpFragment"
+            app:destination="@id/otpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/otpFragment"
+        android:name="com.dkglabs.auth.fragments.OtpFragment"
+        android:label="OtpFragment"
+        tools:layout="@layout/fragment_otp">
+        <action
+            android:id="@+id/action_otpFragment_to_registerUserFragment"
+            app:destination="@id/registerUserFragment" />
+        <action
+            android:id="@+id/action_otpFragment_to_phoneFragment"
+            app:popUpTo="@id/phoneFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerUserFragment"
+        android:name="com.dkglabs.auth.fragments.RegisterUserFragment"
+        android:label="RegisterUserFragment"
+        tools:layout="@layout/fragment_register_user">
+        <action
+            android:id="@+id/action_registerUserFragment_to_phoneFragment"
+            app:popUpTo="@id/phoneFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_registerUserFragment_to_userPasswordFragment"
+            app:destination="@id/userPasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userPasswordFragment"
+        android:name="com.dkglabs.auth.fragments.PasswordFragment"
+        android:label="UserPasswordFragment"
+        tools:layout="@layout/fragment_password">
+        <action
+            android:id="@+id/action_userPasswordFragment_to_registerUserFragment"
+            app:popUpTo="@id/registerUserFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

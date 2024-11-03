@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.AccountFragment">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="120dp"
+                    android:id="@+id/accountImage"
+                    style="@style/CircularImageViewStroke"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="@dimen/large"
+                    android:src="@drawable/placeholder_user"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewName"
+                    style="@style/TextAppHeadCenter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large"
+                    android:hint="@string/user_name_placeholder"
+                    android:padding="@dimen/extra_small" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewPhone"
+                    style="@style/TextAppSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/user_account_phone_placeholder" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonEditAccount"
+                    style="@style/ButtonStyleDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small"
+                    android:text="@string/edit_profile" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/AccountHeadingSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large"
+                    android:text="@string/text_general" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/AccountCardStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/small">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/cardMyAccount"
+                            style="@style/AccountOption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_account_box"
+                            android:text="@string/my_account" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/AccountOption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_order"
+                            android:text="@string/my_order"
+                            android:visibility="gone"/>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/AccountOption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_health_credit"
+                            android:text="@string/my_health_credit"
+                            android:visibility="gone"/>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/AccountOption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_kyc"
+                            android:text="@string/update_kyc"
+                            android:visibility="gone"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/AccountHeadingSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large"
+                    android:text="@string/text_services" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/AccountCardStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/small">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/AccountOption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_slip"
+                            android:text="@string/dealer_slip"
+                            android:visibility="gone"/>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/cardNearestDealer"
+                            style="@style/AccountOption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_nearest_dealer"
+                            android:text="@string/text_nearest_dealer" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/cardNearestPartner"
+                            style="@style/AccountOption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_partner"
+                            android:text="@string/text_nearest_partner" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/cardEvScore"
+                            style="@style/AccountOption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_partner"
+                            android:text="@string/ev_score" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/AccountHeadingSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large"
+                    android:text="@string/text_settings" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/AccountCardStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/small">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/cardTheme"
+                            style="@style/AccountOptionNoNavigation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_theme"
+                            android:text="@string/text_theme" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/cardLanguage"
+                            style="@style/AccountOptionNoNavigation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_language"
+                            android:text="@string/text_language" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/large"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/cardFaq"
+                        style="@style/AccountOption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_faq" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/cardTerms"
+                        style="@style/AccountOption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_terms_of_services" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/cardPrivacy"
+                        style="@style/AccountOption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_privacy_policy" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/cardLogout"
+                        style="@style/AccountOptionNoNavigation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_logout"
+                        android:text="@string/text_logout" />
+                </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.EnachStatusFragment">
+
+    <data>
+
+        <variable
+            name="loanDataResponse"
+            type="com.dkglabs.model.response.LoanDataResponse" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/horizontal_large"
+            android:paddingTop="@dimen/vertical_large"
+            android:paddingEnd="@dimen/horizontal_large"
+            android:paddingBottom="@dimen/vertical_large">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/loan_status" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/loanStateTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/large"
+                android:layout_marginEnd="@dimen/large"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/hi_loan_status"
+                android:textSize="@dimen/text_24" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/dashboardMessage"
+                style="@style/TextAppSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/large"
+                android:layout_marginEnd="@dimen/large"
+                android:text="@string/here_you_will_get_update" />
+
+
+            <RelativeLayout
+                android:id="@+id/stateProgressBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.dkglabs.base.ui.stateprogressbar.StateProgressBar
+
+                    android:id="@+id/loanStateProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/large"
+                    android:layout_marginBottom="@dimen/large"
+                    app:spb_animateToCurrentProgressState="true"
+                    app:spb_checkStateCompleted="true"
+                    app:spb_currentStateDescriptionColor="?colorPrimary"
+                    app:spb_currentStateNumber="one"
+                    app:spb_maxStateNumber="five"
+                    app:spb_stateBackgroundColor="?colorSurfaceVariant"
+                    app:spb_stateDescriptionColor="?colorPrimary"
+                    app:spb_stateForegroundColor="?colorPrimary"
+                    app:spb_stateNumberBackgroundColor="?colorOnSurfaceVariant"
+                    app:spb_stateNumberForegroundColor="?colorOnPrimary" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llProgressHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <include
+                    android:id="@+id/llProgress"
+                    layout="@layout/layout_progressbar" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llEnachStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/enachStatusMessage"
+                    style="@style/TextAppRegular.Center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/large"
+                    android:layout_marginEnd="@dimen/large"
+                    android:textColor="?colorPrimary" />
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/extra_large"
+                    android:collapseColumns="*"
+                    android:shrinkColumns="*">
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Your e-nach/e-mandate status is :" />
+                        <!--90000161-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanDataResponse.emandateStatus}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+                </TableLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonVideoKyc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:enabled="true"
+                    android:text="@string/text_start_video_kyc" />
+            </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

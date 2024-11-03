@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="app_guide_title">
+        <item>@string/app_guide_title_1</item>
+        <item>@string/app_guide_title_2</item>
+        <item>@string/app_guide_title_3</item>
+        <item>@string/app_guide_title_4</item>
+        <item>@string/app_guide_title_5</item>
+    </string-array>
+    <string-array name="app_guide_message">
+        <item>@string/app_guide_message_1</item>
+        <item>@string/app_guide_message_2</item>
+        <item>@string/app_guide_message_3</item>
+        <item>@string/app_guide_message_4</item>
+        <item>@string/app_guide_message_5</item>
+    </string-array>
+</resources>

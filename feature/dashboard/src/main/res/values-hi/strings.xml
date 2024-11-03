@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_miss_call">हमें मिस कॉल दें</string>
+    <string name="text_contact_us">हमसे संपर्क करें</string>
+    <string name="blank_dashboard_message">FINLE में आपका स्वागत है! आज ही अपनी वित्तीय यात्रा शुरू करें। जानें कि हम आपकी वित्तीय लक्ष्यों को प्राप्त करने में आपकी कैसे मदद कर सकते हैं। हमारे ऋण विकल्पों का अन्वेषण करें और अपनी आवश्यकताओं के लिए सबसे उपयुक्त विकल्प खोजें। कोई चिंता नहीं, हम हर कदम पर आपकी मदद करने के लिए यहां हैं।</string>
+    <string name="text_start_loan">अपना आवेदन शुरू करें</string>
+    <string name="placeholder_rupee">₹ %1$d</string>
+    <string name="text_due_emi">बकाया EMI\'s</string>
+    <string name="text_pay_now">अभी भुगतान करें</string>
+    <string name="text_monthly_emi">मासिक EMI</string>
+    <string name="text_paid_emi">भुगतान की गई EMI\'s</string>
+    <string name="text_loan">ऋण</string>
+    <string name="text_paid_amount">भुगतान की गई राशि</string>
+    <string name="text_due_amount">बकाया राशि</string>
+    <string name="text_emi">EMI\'s</string>
+    <string name="text_emi_amount">EMI (₹)</string>
+    <string name="welcome_dashboard_message">स्वागत है %1$s</string>
+    <string name="text_confirm_payment">भुगतान की पुष्टि करें</string>
+    <string name="placeholder_pay_due">बकाया EMI का भुगतान करें ₹ %1$d</string>
+    <string name="text_choose_payment">भुगतान विधि चुनें</string>
+    <string name="hi_user_name">नमस्ते %1$s !</string>
+    <string name="text_loan_details">ऋण विवरण</string>
+    <string name="frequency">आवृत्ति :</string>
+    <string name="payment_mode">भुगतान मोड:</string>
+    <string name="emi_paid">भुगतान की गई EMI</string>
+    <string name="total_emi">कुल EMI</string>
+    <string name="pending_emi">लंबित EMI</string>
+    <string name="loan_interest">ऋण ब्याज</string>
+    <string name="loan_number">ऋण संख्या</string>
+    <string name="account_number">खाता संख्या</string>
+    <string name="loan_type">ऋण प्रकार</string>
+    <string name="loan_tenure">ऋण अवधि</string>
+    <string name="interest_rate">ब्याज दर</string>
+    <string name="view_all">सभी देखें</string>
+</resources>

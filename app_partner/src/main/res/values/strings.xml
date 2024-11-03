@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FINLE Partner</string>
+    <string name="app_name_text">FINLE Partner</string>
+    <string name="app_slogan">Charging Your Drive, Earning Your Strive</string>
+    <string name="app_logo" translatable="false">App Logo</string>
+
+    <string name="app_version">Version : %1$s</string>
+</resources>

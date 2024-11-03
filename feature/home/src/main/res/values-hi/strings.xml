@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_loan_calculator">ऋण गणक</string>
+    <string name="text_amount">राशि</string>
+    <string name="text_length">अवधि</string>
+    <string name="text_interest">ब्याज दर</string>
+    <string name="text_principal">मूल धन</string>
+    <string name="text_total_interest">कुल ब्याज</string>
+    <string name="text_total_payable">कुल देय राशि</string>
+    <string name="text_monthly_payment">मासिक भुगतान (ईएमआई)</string>
+    <string name="placeholder_length">%1$d वर्ष</string>
+    <string name="offers_title_1">पैसों की चिंता को अलविदा कहें - हमारे ऋणों ने आपको कवर कर लिया है!</string>
+    <string name="offers_title_2">हमारी तेज़ और आसान ऋण प्रक्रिया के साथ वित्तीय स्वतंत्रता का अनुभव करें!</string>
+    <string name="offers_title_3">हमारे झंझट-मुक्त ऋण समाधानों के साथ अपने सपनों को साकार करें!</string>
+    <string name="offers_description_1">पैसों की चिंताओं को अलविदा कहें और हमारे व्यापक ऋण विकल्पों के साथ अपना वित्तीय भविष्य सुरक्षित करें। व्यक्तिगत ऋण से लेकर गृह सुधार ऋण तक, हमने आपको प्रतिस्पर्धी ब्याज दरों, लचीली पुनर्भुगतान शर्तों और वैयक्तिकृत समाधानों से कवर किया है।</string>
+    <string name="offers_description_2">हमारी तेज़ और आसान ऋण प्रक्रिया के साथ पहले जैसी वित्तीय स्वतंत्रता का अनुभव करें। चाहे यह आपात स्थिति, निवेश, या व्यक्तिगत खर्चों के लिए हो, हमारे ऋण समाधान प्रतिस्पर्धी ब्याज दरों और त्वरित अनुमोदन के साथ आपको आवश्यक वित्तीय सहायता प्रदान करते हैं।</string>
+    <string name="offers_description_3">आज ही हमारे झंझट-मुक्त व्यक्तिगत ऋण के लिए आवेदन करें और अपने सपनों को हकीकत में बदलने का अवसर प्राप्त करें। प्रतिस्पर्धी ब्याज दरों, लचीले पुनर्भुगतान विकल्पों और निर्बाध आवेदन प्रक्रिया का आनंद लें।</string>
+    <string name="apply_loan">ऋण आवेदन करें</string>
+    <string name="check_loan_eligibility">ऋण पात्रता</string>
+    <string name="psychometric_test">साइकोमेट्रिक परीक्षण</string>
+    <string name="home_toolbar_name">नमस्ते %1$s !</string>
+    <string name="principal">मूल धन</string>
+    <string name="principal2">मूल धन</string>
+    <string name="all_loan_doc">सभी ऋण दस्तावेज़</string>
+    <string name="total_interest">कुल ब्याज</string>
+</resources>

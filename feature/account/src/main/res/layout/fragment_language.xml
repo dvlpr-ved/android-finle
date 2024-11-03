@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        tools:context=".fragments.LanguageFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/extra_large"
+            android:layout_marginTop="@dimen/large"
+            android:drawableStart="@drawable/baseline_square"
+            android:drawablePadding="@dimen/medium"
+            style="@style/TextAppAction"
+            android:drawableTint="?colorPrimaryContainer"
+            android:text="@string/select_language" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/radioEnglish"
+            android:orientation="horizontal"
+            android:padding="@dimen/extra_small">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioEnglish"
+                style="@style/RadioButtonStyle"
+                android:layout_weight="1"
+                android:tag="en"
+                android:text="@string/language_english" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioHindi"
+                style="@style/RadioButtonStyle"
+                android:layout_weight="1"
+                android:tag="hi"
+                android:text="@string/language_hindi" />
+
+        </RadioGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonDone"
+            style="@style/ButtonStyleDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/small"
+            android:layout_marginEnd="@dimen/large"
+            android:text="@string/text_done" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_loan_application"
+    app:startDestination="@id/applicationFragment">
+
+    <fragment
+        android:id="@+id/applicationFragment"
+        android:name="com.dkglabs.loan_application.fragments.ApplicationFragment"
+        android:label="fragment_application"
+        tools:layout="@layout/fragment_application">
+
+        <action
+            android:id="@+id/action_applicationFragment_to_applicationDetailFragment"
+            app:destination="@id/applicationDetailFragment">
+
+            <argument
+                android:name="loanApplicantResponse"
+                app:argType="com.dkglabs.model.response.LoanApplicantResponse" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/applicationDetailFragment"
+        android:name="com.dkglabs.loan_application.fragments.ApplicationDetailFragment"
+        android:label="fragment_application_detail"
+        tools:layout="@layout/fragment_application_detail">
+
+        <argument
+            android:name="loanApplicantResponse"
+            app:argType="com.dkglabs.model.response.LoanApplicantResponse" />
+
+        <action
+            android:id="@+id/action_applicationDetailFragment_to_preDisbursementFragment"
+            app:destination="@id/preDisbursementFragment">
+
+            <argument
+                android:name="applicantDetail"
+                app:argType="com.dkglabs.loan_application.model.ApplicantDetail" />
+        </action>
+
+        <action
+            android:id="@+id/action_applicationDetailFragment_to_loanFulfillmentFragment"
+            app:destination="@id/loanFulfillmentFragment">
+
+            <argument
+                android:name="applicantDetail"
+                app:argType="com.dkglabs.loan_application.model.ApplicantDetail" />
+        </action>
+        <action
+            android:id="@+id/action_applicationDetailFragment_to_postDisbursementFragment"
+            app:destination="@id/postDisbursementFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/preDisbursementFragment"
+        android:name="com.dkglabs.loan_application.fragments.PreDisbursementFragment"
+        android:label="fragment_pre_disbursement"
+        tools:layout="@layout/fragment_loan_documents">
+
+        <argument
+            android:name="applicantDetail"
+            app:argType="com.dkglabs.loan_application.model.ApplicantDetail" />
+        <action
+            android:id="@+id/action_preDisbursementFragment_to_prePostDocUpload"
+            app:destination="@id/prePostDocUpload" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loanFulfillmentFragment"
+        android:name="com.dkglabs.loan_application.fragments.LoanFulfillmentFragment"
+        android:label="loan_fulfillment_fragment"
+        tools:layout="@layout/fragment_loan_documents">
+
+        <argument
+            android:name="applicantDetail"
+            app:argType="com.dkglabs.loan_application.model.ApplicantDetail" />
+        <action
+            android:id="@+id/action_loanFulfillmentFragment_to_loanFulfillmentFeildFragment"
+            app:destination="@id/loanFulfillmentFeildFragment">
+
+            <argument
+                android:name="applicantDetail"
+                app:argType="com.dkglabs.loan_application.model.ApplicantDetail" />
+        </action>
+        <action
+            android:id="@+id/action_loanFulfillmentFragment_to_prePostDocUpload"
+            app:destination="@id/prePostDocUpload" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/postDisbursementFragment"
+        android:name="com.dkglabs.loan_application.fragments.PostDisbursementFragment"
+        android:label="fragment_ost_disbursement"
+        tools:layout="@layout/fragment_loan_documents">
+
+        <argument
+            android:name="applicantDetail"
+            app:argType="com.dkglabs.loan_application.model.ApplicantDetail" />
+        <action
+            android:id="@+id/action_postDisbursementFragment_to_prePostDocUpload"
+            app:destination="@id/prePostDocUpload" />
+    </fragment>
+    <fragment
+        android:id="@+id/loanFulfillmentFeildFragment"
+        android:name="com.dkglabs.loan_application.fragments.LoanFulfillmentFeildFragment"
+        android:label="LoanFulfillmentFeildFragment"
+        tools:layout="@layout/fragment_loan_documents">
+
+        <argument
+            android:name="applicantDetail"
+            app:argType="com.dkglabs.loan_application.model.ApplicantDetail" />
+        <action
+            android:id="@+id/action_loanFulfillmentFeildFragment_to_fieldInspectionFragment"
+            app:destination="@id/fieldInspectionFragment" />
+        <action
+            android:id="@+id/action_loanFulfillmentFeildFragment_to_prePostDocUpload"
+            app:destination="@id/prePostDocUpload" />
+    </fragment>
+    <fragment
+        android:id="@+id/prePostDocUpload"
+        android:name="com.dkglabs.loan_application.fragments.PrePostDocUpload"
+        android:label="fragment_pre_post_doc_upload"
+        tools:layout="@layout/fragment_pre_post_doc_upload" >
+        <action
+            android:id="@+id/action_prePostDocUpload_to_chooseImageMethodFragment2"
+            app:destination="@id/chooseImageMethodFragment2" />
+        <argument
+            android:name="respomse"
+            app:argType="com.dkglabs.loan_application.model.ApplicantDocDetails" />
+    </fragment>
+    <dialog
+        android:id="@+id/chooseImageMethodFragment2"
+        android:name="com.dkglabs.apply_loan.dialogs.ChooseImageMethodFragment"
+        android:label="ChooseImageMethodFragment" />
+    <fragment
+        android:id="@+id/fullFillDocUploading"
+        android:name="com.dkglabs.loan_application.fragments.FullFillDocUploading"
+        android:label="fragment_full_fill_doc_uploading"
+        tools:layout="@layout/fragment_full_fill_doc_uploading" >
+        <argument
+            android:name="response"
+            app:argType="com.dkglabs.loan_application.model.ApplicantDocDetails" />
+        <action
+            android:id="@+id/action_fullFillDocUploading_to_chooseImageMethodFragment2"
+            app:destination="@id/chooseImageMethodFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fieldInspectionFragment"
+        android:name="com.dkglabs.loan_application.fragments.FieldInspectionFragment"
+        android:label="fragment_field_inspection"
+        tools:layout="@layout/fragment_field_inspection" >
+        <action
+            android:id="@+id/action_fieldInspectionFragment_to_chooseImageMethodFragment2"
+            app:destination="@id/chooseImageMethodFragment2" />
+        <argument
+            android:name="response"
+            app:argType="com.dkglabs.loan_application.model.ApplicantDocDetails" />
+    </fragment>
+</navigation>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_account"
+    app:startDestination="@id/accountFragment">
+
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.dkglabs.account.fragments.AccountFragment"
+        android:label="AccountFragment"
+        tools:layout="@layout/fragment_account">
+        <action
+            android:id="@+id/action_accountFragment_to_nearestPartnerFragment"
+            app:destination="@id/nearestPartnerFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_nearestDealerFragment"
+            app:destination="@id/nearestDealerFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_faqFragment"
+            app:destination="@id/faqFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_logoutDialogFragment"
+            app:destination="@id/logoutDialogFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_languageFragment"
+            app:destination="@id/languageFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_themeFragment"
+            app:destination="@id/themeFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_accountImageFragment"
+            app:destination="@id/accountImageFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_editAccountFragment"
+            app:destination="@id/editAccountFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_myAccountFragment"
+            app:destination="@id/myAccountFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_evScoreFragment"
+            app:destination="@id/evScoreFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nearestPartnerFragment"
+        android:name="com.dkglabs.account.fragments.NearestPartnerFragment"
+        android:label="NearestPartnerFragment"
+        tools:layout="@layout/fragment_nearest_partner" />
+
+    <fragment
+        android:id="@+id/nearestDealerFragment"
+        android:name="com.dkglabs.account.fragments.NearestDealerFragment"
+        android:label="NearestDealerFragment"
+        tools:layout="@layout/fragment_nearest_dealer" />
+
+    <fragment
+        android:id="@+id/faqFragment"
+        android:name="com.dkglabs.account.fragments.FaqFragment"
+        android:label="FaqFragment"
+        tools:layout="@layout/fragment_faq" />
+
+    <dialog
+        android:id="@+id/logoutDialogFragment"
+        android:name="com.dkglabs.account.dialogs.LogoutDialogFragment"
+        android:label="LogoutDialogFragment"
+        tools:layout="@layout/fragment_logout_dialog" />
+
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.dkglabs.account.fragments.LanguageFragment"
+        android:label="LanguageFragment"
+        tools:layout="@layout/fragment_language" />
+
+    <fragment
+        android:id="@+id/themeFragment"
+        android:name="com.dkglabs.account.fragments.ThemeFragment"
+        android:label="ThemeFragment"
+        tools:layout="@layout/fragment_theme" />
+
+    <fragment
+        android:id="@+id/editAccountFragment"
+        android:name="com.dkglabs.account.fragments.EditAccountFragment"
+        android:label="EditAccountFragment"
+        tools:layout="@layout/fragment_edit_account" />
+
+    <fragment
+        android:id="@+id/accountImageFragment"
+        android:name="com.dkglabs.account.fragments.AccountImageFragment"
+        android:label="AccountImageFragment"
+        tools:layout="@layout/fragment_account_image">
+        <action
+            android:id="@+id/action_accountImageFragment_to_editAccountImageDialogFragment"
+            app:destination="@id/editAccountImageDialogFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/editAccountImageDialogFragment"
+        android:name="com.dkglabs.account.dialogs.EditAccountImageDialogFragment"
+        android:label="EditAccountImageDialogFragment"
+        tools:layout="@layout/fragment_edit_account_image_dialog" />
+    <fragment
+        android:id="@+id/myAccountFragment"
+        android:name="com.dkglabs.account.fragments.MyAccountFragment"
+        android:label="MyAccountFragment"
+        tools:layout="@layout/fragment_my_account">
+
+        <action
+            android:id="@+id/action_myAccountFragment_to_editAccountImageDialogFragment"
+            app:destination="@id/editAccountImageDialogFragment" />
+        <action
+            android:id="@+id/action_myAccountFragment_to_accountImageFragment"
+            app:destination="@id/accountImageFragment" />
+        <action
+            android:id="@+id/action_myAccountFragment_to_editAccountFragment"
+            app:destination="@id/editAccountFragment" />
+        <action
+            android:id="@+id/action_myAccountFragment_to_updatePasswordFragment"
+            app:destination="@id/updatePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/evScoreFragment"
+        android:name="com.dkglabs.account.fragments.EvScoreFragment"
+        android:label="EvScoreFragment"
+        tools:layout="@layout/fragment_ev_score" />
+    <fragment
+        android:id="@+id/updatePasswordFragment"
+        android:name="com.dkglabs.account.fragments.UpdatePasswordFragment"
+        android:label="UpdatePasswordFragment"
+        tools:layout="@layout/fragment_update_password" />
+</navigation>

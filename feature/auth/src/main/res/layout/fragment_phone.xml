@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context="com.dkglabs.auth.fragments.PhoneFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppHeadCenter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/xx_large"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/xx_large"
+            android:text="@string/welcome_to_finle"
+            android:textColor="?colorPrimary" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/large"
+            android:text="@string/phone_number_msg"
+            android:textAlignment="center" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/large"
+                android:layout_marginTop="@dimen/full"
+                android:layout_marginEnd="@dimen/large"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppHeadingMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="@string/phone_number" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                        android:id="@+id/countryCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/large"
+                        android:layout_marginEnd="@dimen/small"
+                        app:ccp_defaultCode="91"
+                        app:ccp_defaultNameCode="IN" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textPhone"
+                        style="@style/TextInputOutlined"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789"
+                            android:hint="@string/phone_hint"
+                            android:inputType="phone"
+                            android:letterSpacing="0.2"
+                            android:singleLine="true"
+                            android:textAlignment="viewStart" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonGetOtp"
+                style="@style/ButtonStyleDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/large"
+                android:layout_marginTop="@dimen/full"
+                android:layout_marginEnd="@dimen/large"
+                android:layout_marginBottom="@dimen/full"
+                android:text="@string/get_otp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

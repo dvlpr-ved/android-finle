@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_apply_loan"
+    app:startDestination="@id/loanApplyNowFragment">
+
+    <fragment
+        android:id="@+id/loanApplyNowFragment"
+        android:name="com.dkglabs.apply_loan.fragments.LoanApplyNowFragment"
+        android:label="fragment_loan_apply_now"
+        tools:layout="@layout/fragment_loan_apply_now">
+        <action
+            android:id="@+id/action_loanApplyNowFragment_to_termsAndConditions"
+            app:destination="@id/termsAndConditions" />
+        <action
+            android:id="@+id/action_loanApplyNowFragment_to_dealerMappingFragment"
+            app:destination="@id/dealerMappingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/basicKycPanFragment"
+        android:name="com.dkglabs.apply_loan.fragments.BasicKycPanFragment"
+        android:label="fragment_basic_kyc_pan"
+        tools:layout="@layout/fragment_basic_kyc_pan">
+        <action
+            android:id="@+id/action_basicKycPanFragment_to_chooseImageMethodFragment"
+            app:destination="@id/chooseImageMethodFragment" />
+        <action
+            android:id="@+id/action_basicKycPanFragment_to_panDetailsFragment"
+            app:destination="@id/panDetailsFragment">
+            <argument
+                android:name="panData"
+                app:argType="com.dkglabs.model.response.PanResponse" />
+        </action>
+        <!--<action
+            android:id="@+id/action_basicKycPanFragment_to_basicKycAadhaarFragment"
+            app:destination="@id/basicKycAadhaarFragment" />-->
+        <action
+            android:id="@+id/action_basicKycPanFragment_to_basicKycAadhaarOtpFragment"
+            app:destination="@id/basicKycAadhaarOtpFragment" />
+        <argument
+            android:name="NbfcPartnerId"
+            app:argType="com.dkglabs.apply_loan.model.NbfcAndDealerData" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/panDetailsFragment"
+        android:name="com.dkglabs.apply_loan.dialogs.PanDetailsFragment"
+        android:label="PanDetailsFragment"
+        tools:layout="@layout/fragment_pan_details">
+        <argument
+            android:name="panData"
+            app:argType="com.dkglabs.model.response.PanResponse" />
+        <!--<action
+            android:id="@+id/action_panDetailsFragment_to_basicKycAadhaarFragment"
+            app:destination="@id/basicKycAadhaarFragment" />-->
+        <action
+            android:id="@+id/action_panDetailsFragment_to_basicKycAadhaarOtpFragment"
+            app:destination="@id/basicKycAadhaarOtpFragment" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/basicKycAadhaarOtpFragment"
+        android:name="com.dkglabs.apply_loan.fragments.BasicKycAadhaarOtpFragment"
+        android:label="fragment_basic_kyc_aadhaar_otp"
+        tools:layout="@layout/fragment_basic_kyc_aadhaar_otp">
+        <action
+            android:id="@+id/action_basicKycAadhaarOtpFragment_to_aadhaarDetailsFragment"
+            app:destination="@id/aadhaarDetailsFragment">
+
+            <argument
+                android:name="aadhaarData"
+                app:argType="com.dkglabs.model.response.AadhaarOtpResponse" />
+        </action>
+        <action
+            android:id="@+id/action_basicKycAadhaarOtpFragment_to_loanUserAddressFragment"
+            app:destination="@id/loanUserAddressFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/basicKycAadhaarFragment"
+        android:name="com.dkglabs.apply_loan.fragments.BasicKycAadhaarFragment"
+        android:label="fragment_basic_kyc_aadhaar"
+        tools:layout="@layout/fragment_basic_kyc_aadhaar">
+        <!--        <action
+                    android:id="@+id/action_basicKycAadhaarFragment_to_chooseImageMethodFragment"
+                    app:destination="@id/chooseImageMethodFragment" />-->
+        <!--<action
+            android:id="@+id/action_basicKycAadhaarFragment_to_aadhaarDetailsFragment"
+            app:destination="@id/aadhaarDetailsFragment">
+            <argument
+                android:name="aadhaarData"
+                app:argType="com.dkglabs.model.response.AadhaarResponse" />
+        </action>-->
+        <!--<action
+            android:id="@+id/action_basicKycAadhaarFragment_to_basicKycDlFragment"
+            app:destination="@id/basicKycDlFragment" />-->
+    </fragment>
+
+    <dialog
+        android:id="@+id/aadhaarDetailsFragment"
+        android:name="com.dkglabs.apply_loan.dialogs.AadhaarDetailsFragment"
+        android:label="AadhaarDetailsFragment"
+        tools:layout="@layout/fragment_aadhaar_details">
+        <!--<argument
+            android:name="aadhaarData"
+            app:argType="com.dkglabs.model.response.AadhaarResponse" />-->
+        <argument
+            android:name="aadhaarData"
+            app:argType="com.dkglabs.model.response.AadhaarOtpResponse" />
+        <action
+            android:id="@+id/action_aadhaarDetailsFragment_to_loanUserAddressFragment"
+            app:destination="@id/loanUserAddressFragment">
+            <argument
+                android:name="aadhaarData"
+                app:argType="com.dkglabs.model.response.AadhaarOtpResponse" />
+        </action>
+    </dialog>
+
+
+    <fragment
+        android:id="@+id/loanUserAddressFragment"
+        android:name="com.dkglabs.apply_loan.fragments.LoanUserAddressFragment"
+        android:label="fragment_loan_user_address"
+        tools:layout="@layout/fragment_loan_user_address">
+
+        <argument
+            android:name="aadhaarData"
+            app:argType="com.dkglabs.model.response.AadhaarOtpResponse" />
+        <action
+            android:id="@+id/action_loanUserAddressFragment_to_basicKycDlFragment"
+            app:destination="@id/basicKycDlFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/basicKycDlFragment"
+        android:name="com.dkglabs.apply_loan.fragments.BasicKycDlFragment"
+        android:label="fragment_basic_kyc_dl"
+        tools:layout="@layout/fragment_basic_kyc_dl">
+        <action
+            android:id="@+id/action_basicKycDlFragment_to_chooseImageMethodFragment"
+            app:destination="@id/chooseImageMethodFragment" />
+        <action
+            android:id="@+id/action_basicKycDlFragment_to_dlDetailsFragment"
+            app:destination="@id/dlDetailsFragment">
+            <argument
+                android:name="dlData"
+                app:argType="com.dkglabs.model.response.DlResponse" />
+        </action>
+        <action
+            android:id="@+id/action_basicKycDlFragment_to_loanDetailFragment"
+            app:destination="@id/loanDetailFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/dlDetailsFragment"
+        android:name="com.dkglabs.apply_loan.dialogs.DlDetailsFragment"
+        android:label="DlDetailsFragment"
+        tools:layout="@layout/fragment_dl_details">
+        <argument
+            android:name="dlData"
+            app:argType="com.dkglabs.model.response.DlResponse" />
+        <action
+            android:id="@+id/action_dlDetailsFragment_to_loanDetailFragment"
+            app:destination="@id/loanDetailFragment" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/loanDetailFragment"
+        android:name="com.dkglabs.apply_loan.fragments.LoanDetailFragment"
+        android:label="LoanBorrowerDetailFragment"
+        tools:layout="@layout/fragment_loan_details">
+        <action
+            android:id="@+id/action_loanDetailFragment_to_applicantDetailFragment"
+            app:destination="@id/applicantDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/applicantDetailFragment"
+        android:name="com.dkglabs.apply_loan.fragments.ApplicantDetailsFragment"
+        android:label="LoanBasicDetailsFragment"
+        tools:layout="@layout/fragment_applicant_details">
+        <action
+            android:id="@+id/action_applicantDetailFragment_to_loanUserContactFragment"
+            app:destination="@id/loanUserContactFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loanUserBankFragment"
+        android:name="com.dkglabs.apply_loan.fragments.LoanUserBankFragment"
+        android:label="LoanUserBankFragment"
+        tools:layout="@layout/fragment_loan_user_bank">
+        <action
+            android:id="@+id/action_loanUserBankFragment_to_bankDetailsFragment"
+            app:destination="@id/bankDetailsFragment">
+            <argument
+                android:name="bankData"
+                app:argType="com.dkglabs.model.applyloan.BankDetails" />
+        </action>
+    </fragment>
+
+    <dialog
+        android:id="@+id/bankDetailsFragment"
+        android:name="com.dkglabs.apply_loan.dialogs.BankDetailsFragment"
+        android:label="BankDetailsFragment"
+        tools:layout="@layout/fragment_bank_details">
+        <argument
+            android:name="bankData"
+            app:argType="com.dkglabs.model.applyloan.BankDetails" />
+        <action
+            android:id="@+id/action_bankDetailsFragment_to_electricityBillFragment"
+            app:destination="@id/electricityBillFragment" />
+        <!--        <action
+                    android:id="@+id/action_bankDetailsFragment_to_loanVideoKYCFragment2"
+                    app:destination="@id/loanVideoKYCFragment" />-->
+    </dialog>
+
+    <fragment
+        android:id="@+id/electricityBillFragment"
+        android:name="com.dkglabs.apply_loan.fragments.ElectricityBillFragment"
+        android:label="ElectricityBillFragment"
+        tools:layout="@layout/fragment_electricity_bill">
+        <action
+            android:id="@+id/action_electricityBillFragment_to_electricityDetailsFragment"
+            app:destination="@id/electricityDetailsFragment" />
+        <action
+            android:id="@+id/action_electricityBillFragment_to_loanUserDocumentFragment"
+            app:destination="@id/loanUserDocumentFragment" />
+        <!--        <action
+                    android:id="@+id/action_electricityBillFragment_to_loanVideoKYCFragment"
+                    app:destination="@id/loanVideoKYCFragment" />-->
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/electricityDetailsFragment"
+        android:name="com.dkglabs.apply_loan.dialogs.ElectricityDetailsFragment"
+        android:label="ElectrictiyDetailsFragment"
+        tools:layout="@layout/fragment_electricity_details">
+        <argument
+            android:name="electricityData"
+            app:argType="com.dkglabs.model.response.ElectricityBillResponse" />
+        <!--        <action
+                    android:id="@+id/action_electricityDetailsFragment_to_loanVideoKYCFragment"
+                    app:destination="@id/loanVideoKYCFragment" />-->
+        <action
+            android:id="@+id/action_electricityDetailsFragment_to_loanUserDocumentFragment"
+            app:destination="@id/loanUserDocumentFragment" />
+    </dialog>
+
+
+    <fragment
+        android:id="@+id/loanUserDocumentFragment"
+        android:name="com.dkglabs.apply_loan.fragments.LoanDocumentFragment"
+        android:label="LoanUserDocumentFragment"
+        tools:layout="@layout/fragment_loan_document">
+        <action
+            android:id="@+id/action_loanUserDocumentFragment_to_chooseImageMethodFragment"
+            app:destination="@id/chooseImageMethodFragment" />
+        <action
+            android:id="@+id/action_loanUserDocumentFragment_to_previewLoanDetailsFragment"
+            app:destination="@id/previewLoanDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/psychometricStatusFragment"
+        android:name="com.dkglabs.apply_loan.fragments.PsychometricStatusFragment"
+        android:label="PsychometricStatusFragment"
+        tools:layout="@layout/fragment_psychometric_status">
+        <action
+            android:id="@+id/action_psychometricStatusFragment_to_navTest"
+            app:destination="@id/nav_test"
+            app:popUpTo="@id/psychometricStatusFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_psychometricStatusFragment_to_userEvScoreFragment"
+            app:destination="@id/userEvScoreFragment" />
+    </fragment>
+
+    <include app:graph="@navigation/nav_test" />
+
+    <fragment
+        android:id="@+id/userEvScoreFragment"
+        android:name="com.dkglabs.apply_loan.fragments.UserEvScoreFragment"
+        android:label="UserEvScoreFragment"
+        tools:layout="@layout/fragment_user_ev_score">
+        <action
+            android:id="@+id/action_userEvScoreFragment_to_loanEvScoreFragment"
+            app:destination="@id/loanEvScoreFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loanEvScoreFragment"
+        android:name="com.dkglabs.apply_loan.fragments.LoanEvScoreFragment"
+        android:label="LoanApplyCompleteFragment"
+        tools:layout="@layout/fragment_loan_ev_score">
+        <action
+            android:id="@+id/action_loanEvScoreFragment_to_loanPreviewFragment"
+            app:destination="@id/loanPreviewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loanPreviewFragment"
+        android:name="com.dkglabs.apply_loan.fragments.LoanPreviewFragment"
+        android:label="LoanPreviewFragment"
+        tools:layout="@layout/fragment_loan_preview">
+        <action
+            android:id="@+id/action_loanPreviewFragment_to_nav_accept_loan"
+            app:destination="@id/nav_accept_loan" />
+    </fragment>
+
+
+    <dialog
+        android:id="@+id/chooseImageMethodFragment"
+        android:name="com.dkglabs.apply_loan.dialogs.ChooseImageMethodFragment"
+        android:label="ChooseImageMethodFragment"
+        tools:layout="@layout/fragment_choose_image_method" />
+
+    <dialog
+        android:id="@+id/loanBackPressFragment"
+        android:name="com.dkglabs.apply_loan.dialogs.LoanBackPressFragment"
+        android:label="LoanBackPressFragment"
+        tools:layout="@layout/fragment_loan_back_press" />
+
+    <action
+        android:id="@+id/action_global_loanBackPressFragment"
+        app:destination="@id/loanBackPressFragment" />
+
+    <action
+        android:id="@+id/action_global_chooseImageMethodFragment"
+        app:destination="@id/chooseImageMethodFragment" />
+
+    <fragment
+        android:id="@+id/loanUserContactFragment"
+        android:name="com.dkglabs.apply_loan.fragments.LoanUserContactFragment"
+        android:label="fragment_loan_user_contact"
+        tools:layout="@layout/fragment_loan_user_contact">
+        <action
+            android:id="@+id/action_loanUserContactFragment_to_loanUserBankFragment"
+            app:destination="@id/loanUserBankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/termsAndConditions"
+        android:name="com.dkglabs.apply_loan.fragments.TermsAndConditions"
+        android:label="fragment_terms_and_conditions"
+        tools:layout="@layout/fragment_terms_and_conditions" />
+
+
+    <fragment
+        android:id="@+id/dealerMappingFragment"
+        android:name="com.dkglabs.apply_loan.fragments.DealerMappingFragment"
+        android:label="fragment_dealer_mapping"
+        tools:layout="@layout/fragment_dealer_mapping">
+
+        <action
+            android:id="@+id/action_dealerMappingFragment_to_nbfcDetailsFragment"
+            app:destination="@id/nbfcDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nbfcDetailsFragment"
+        android:name="com.dkglabs.apply_loan.fragments.NbfcDetailsFragment"
+        android:label="fragment_nbfc_details"
+        tools:layout="@layout/fragment_nbfc_details">
+        <action
+            android:id="@+id/action_nbfcDetailsFragment_to_basicKycPanFragment"
+            app:destination="@id/basicKycPanFragment" />
+        <argument
+            android:name="NbfcAndDealer"
+            app:argType="com.dkglabs.apply_loan.model.NbfcAndDealerData" />
+    </fragment>
+    <fragment
+        android:id="@+id/previewLoanDetailsFragment"
+        android:name="com.dkglabs.apply_loan.fragments.PreviewLoanDetailsFragment"
+        android:label="PreviewLoanDetailsFragment"
+        tools:layout="@layout/fragment_preview_loan_details">
+        <action
+            android:id="@+id/action_previewLoanDetailsFragment_to_psychometricStatusFragment"
+            app:destination="@id/psychometricStatusFragment" />
+        <action
+            android:id="@+id/action_previewLoanDetailsFragment_to_dealerMappingFragment"
+            app:destination="@id/dealerMappingFragment" />
+    </fragment>
+
+    <include app:graph="@navigation/nav_accept_loan" />
+</navigation>

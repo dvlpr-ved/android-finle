@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_pay">Pay</string>
+
+    <string name="sort_ascending">Sort Ascending</string>
+    <string name="sort_descending">Sort Descending</string>
+    <string name="scroll_to_column_position">Scroll to Top</string>
+    <string name="scroll_to_row_position">Scroll to Bottom</string>
+    <string name="progress_collection">Loading collection details</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

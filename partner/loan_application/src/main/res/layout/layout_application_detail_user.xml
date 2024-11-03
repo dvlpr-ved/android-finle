@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="userName"
+            type="String" />
+
+        <variable
+            name="completion"
+            type="String" />
+
+        <variable
+            name="progress"
+            type="Integer" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/large"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textName"
+            style="@style/TextAppHeadCenter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{userName}"
+            android:textAlignment="viewStart"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/extra_small"
+            android:text="@{completion}" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="@{progress}"
+            android:progressTint="?colorPrimary"
+            app:trackColor="?colorPrimaryContainer"
+            app:trackCornerRadius="@dimen/small"
+            app:trackThickness="@dimen/small" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

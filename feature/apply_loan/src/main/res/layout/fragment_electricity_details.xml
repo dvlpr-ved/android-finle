@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".dialogs.ElectricityDetailsFragment">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/small"
+        android:orientation="vertical"
+        android:padding="@dimen/large">
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:text="@string/text_consumer_no" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/consumerNo"
+            style="@style/TextAppHeadingMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:text="@string/text_consumer_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/name"
+            style="@style/TextAppHeadingMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:text="@string/text_address" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/address"
+            style="@style/TextAppHeadingMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonContinue"
+            style="@style/ButtonStyleDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/xx_large"
+            android:layout_marginBottom="@dimen/xx_large"
+            android:text="@string/text_continue" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

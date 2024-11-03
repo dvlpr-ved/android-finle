@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_home"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.dkglabs.home.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_applyLoanActivity"
+            app:destination="@id/applyLoanActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_psychometricTestActivity"
+            app:destination="@id/psychometricTestActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_loanCalculatorFragment"
+            app:destination="@id/loanCalculatorFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_nearestDealerFragment"
+            app:destination="@id/nearestDealerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_nearestPartnerFragment"
+            app:destination="@id/nearestPartnerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_productActivity"
+            app:destination="@id/productActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_allLoanDocumentFragment"
+            app:destination="@id/allLoanDocumentFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loanEligibilityFragment"
+            app:destination="@id/loanEligibilityFragment" />
+    </fragment>
+
+    <activity
+        android:id="@+id/applyLoanActivity"
+        android:name="com.dkglabs.apply_loan.activities.ApplyLoanActivity"
+        android:label="activity_apply_loan"
+        tools:layout="@layout/activity_apply_loan" />
+
+    <activity
+        android:id="@+id/psychometricTestActivity"
+        android:name="com.dkglabs.psychometric_test.activities.PsychometricTestActivity"
+        android:label="activity_psychometric_test"
+        tools:layout="@layout/activity_psychometric_test" />
+
+    <fragment
+        android:id="@+id/loanCalculatorFragment"
+        android:name="com.dkglabs.home.fragments.LoanCalculatorFragment"
+        android:label="LoanCalculatorFragment"
+        tools:layout="@layout/fragment_loan_calculator" />
+    <fragment
+        android:id="@+id/nearestPartnerFragment"
+        android:name="com.dkglabs.account.fragments.NearestPartnerFragment"
+        android:label="NearestPartnerFragment"
+        tools:layout="@layout/fragment_nearest_partner" />
+    <fragment
+        android:id="@+id/nearestDealerFragment"
+        android:name="com.dkglabs.account.fragments.NearestDealerFragment"
+        android:label="NearestDealerFragment"
+        tools:layout="@layout/fragment_nearest_dealer" />
+    <activity
+        android:id="@+id/productActivity"
+        android:name="com.dkglabs.products.activities.ProductActivity"
+        android:label="ProductActivity"
+        tools:layout="@layout/activity_product" />
+    <fragment
+        android:id="@+id/allLoanDocumentFragment"
+        android:name="com.dkglabs.home.fragments.AllLoanDocumentFragment"
+        android:label="fragment_all_loan_document"
+        tools:layout="@layout/fragment_all_loan_document" />
+    <fragment
+        android:id="@+id/loanEligibilityFragment"
+        android:name="com.dkglabs.home.fragments.LoanEligibilityFragment"
+        android:label="fragment_loan_eligibility"
+        tools:layout="@layout/fragment_loan_eligibility" />
+</navigation>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="fragments.BlankDashboardFragment">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/dashboardTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/large"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/welcome_dashboard_message"
+                android:textSize="@dimen/text_24" />
+
+            <androidx.cardview.widget.CardView
+                style="@style/AccountCardStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/xx_large">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/large">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/dashboardMessage"
+                        style="@style/TextAppSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:justificationMode="inter_word"
+                        android:text="@string/blank_dashboard_message" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/xx_large"
+                        android:justificationMode="inter_word"
+                        android:text="Ready to apply?" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonApplyNow"
+                        style="@style/ButtonStyleDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/small"
+                        android:text="@string/text_start_loan" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/xx_large"
+                android:orientation="vertical"
+                android:padding="@dimen/large">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvGetInTouchHead"
+                    style="@style/TextAppAction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Get in touch" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvGetInTouch"
+                    style="@style/TextAppSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small"
+                    android:text="Get answers to common questions about loans, applications, and repayment." />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/cardFaq"
+                    style="@style/AccountOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large"
+                    android:text="@string/text_faq" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/cardContactUs"
+                    style="@style/AccountOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large"
+                    android:text="@string/text_contact_us" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/cardMisscall"
+                    style="@style/AccountOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large"
+                    android:text="@string/text_miss_call" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</layout>

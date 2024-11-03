@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_residence_owner">
+        <item>@string/residence_owned_self</item>
+        <item>@string/residence_owned_parent</item>
+        <item>@string/residence_other</item>
+    </string-array>
+
+    <string-array name="array_type_of_borrower">
+        <item>@string/borrower_self_employed</item>
+        <item>@string/borrower_service</item>
+    </string-array>
+
+    <string-array name="array_qualification">
+        <item>@string/text_edu_below_10</item>
+        <item>@string/text_10th_pass</item>
+        <item>@string/text_12th_pass</item>
+        <item>@string/text_edu_graduation</item>
+        <item>@string/text_edu_post_graduation</item>
+        <item>@string/text_edu_phd</item>
+        <item>@string/text_edu_post_diploma</item>
+        <item>@string/text_edu_none</item>
+    </string-array>
+
+    <string-array name="array_collateral">
+        <item>@string/collateral_property</item>
+        <item>@string/collateral_policy</item>
+        <item>@string/collateral_other</item>
+        <item>@string/collateral_none</item>
+    </string-array>
+
+    <string-array name="array_member">
+        <item>@string/member_0_to_3</item>
+        <item>@string/member_4_to_5</item>
+        <item>@string/member_6_to_8</item>
+        <item>@string/member_9_to_10</item>
+        <item>@string/member_more_than_10</item>
+    </string-array>
+
+    <string-array name="array_kids">
+        <item>@string/kid_1</item>
+        <item>@string/kid_2</item>
+        <item>@string/kid_3</item>
+        <item>@string/kid_more</item>
+        <item>@string/kid_none</item>
+    </string-array>
+
+    <string-array name="array_location">
+        <item>@string/location_main_road</item>
+        <item>@string/location_inside_colony</item>
+    </string-array>
+
+    <string-array name="array_house_area">
+        <item>@string/area_of_house_more_1000</item>
+        <item>@string/area_of_house_750_1000</item>
+        <item>@string/area_of_house_500_750</item>
+        <item>@string/area_of_house_below_500</item>
+    </string-array>
+
+    <string-array name="array_hobbies">
+        <item>@string/hobbies_sport</item>
+        <item>@string/hobbies_art</item>
+        <item>@string/hobbies_activity</item>
+        <item>@string/hobbies_other</item>
+    </string-array>
+
+    <string-array name="array_loan_steps">
+        <item>@string/loan_step_1</item>
+        <item>@string/loan_step_2</item>
+        <item>@string/loan_step_3</item>
+        <item>@string/loan_step_4</item>
+        <item>@string/loan_step_5</item>
+    </string-array>
+
+    <string-array name="array_loan_state">
+        <item>@string/loan_state_1</item>
+        <item>@string/loan_state_2</item>
+        <item>@string/loan_state_3</item>
+        <item>@string/loan_state_4</item>
+        <item>@string/loan_state_6</item>
+    </string-array>
+
+    <string-array name="array_loan_state_rejected">
+        <item>@string/loan_state_1</item>
+        <item>@string/loan_state_2</item>
+        <item>@string/loan_state_3</item>
+        <item>@string/loan_state_5</item>
+        <item>@string/loan_state_6</item>
+    </string-array>
+</resources>

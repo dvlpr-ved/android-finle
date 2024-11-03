@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.library'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    namespace 'com.dkglabs.base'
+    compileSdk 34
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdk 34
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(path: ':core:model')
+
+    implementation libsCommon.appCompat
+    implementation libsCommon.material
+
+    implementation platform(libsFirebaseBom.firebaseBom)
+    implementation libsFirebase.analytics
+    implementation libsFirebase.crashlytics
+
+    implementation libsRetrofit.jackson
+    implementation libsSpinKit.spinKit
+
+    testImplementation test.junit
+    androidTestImplementation androidTest.junit
+    androidTestImplementation androidTest.espresso
+}

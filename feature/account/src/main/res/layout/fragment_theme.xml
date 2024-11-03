@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".fragments.LanguageFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/AccountHeadingSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/large"
+            android:layout_marginTop="@dimen/large"
+            android:text="@string/select_theme" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AccountCardStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small">
+
+            <RadioGroup
+                android:id="@+id/radioGroupTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/extra_small">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/radioDefault"
+                    style="@style/RadioButtonStylePsychoTest"
+                    android:layout_weight="1"
+                    android:tag="en"
+                    android:text="@string/theme_system_default" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/radioLight"
+                    style="@style/RadioButtonStylePsychoTest"
+                    android:layout_weight="1"
+                    android:tag="hi"
+                    android:text="@string/theme_light" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/radioDark"
+                    style="@style/RadioButtonStylePsychoTest"
+                    android:layout_weight="1"
+                    android:tag="hi"
+                    android:text="@string/theme_dark" />
+            </RadioGroup>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</layout>

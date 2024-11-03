@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_loan"
+    app:startDestination="@id/loanFragment">
+
+    <fragment
+        android:id="@+id/loanFragment"
+        android:name="com.dkglabs.apply_loan.fragments.LoanFragment"
+        android:label="fragment_loan"
+        tools:layout="@layout/fragment_loan">
+
+        <action
+            android:id="@+id/action_loanFragment_to_nav_apply_loan"
+            app:destination="@id/nav_apply_loan" />
+
+        <action
+            android:id="@+id/action_loanFragment_to_pendingLoanDialogFragment"
+            app:destination="@id/pendingLoanDialogFragment" />
+
+        <action
+            android:id="@+id/action_loanFragment_to_nav_accept_loan"
+            app:destination="@id/nav_accept_loan"
+            app:popUpTo="@id/loanFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <include app:graph="@navigation/nav_apply_loan" />
+
+    <dialog
+        android:id="@+id/pendingLoanDialogFragment"
+        android:name="com.dkglabs.apply_loan.dialogs.PendingLoanDialogFragment"
+        android:label="fragment_loan_apply_now"
+        tools:layout="@layout/fragment_pending_loan_dialog">
+        <action
+            android:id="@+id/action_pendingLoanDialogFragment_to_nav_apply_loan"
+            app:destination="@id/nav_apply_loan" />
+    </dialog>
+
+    <include app:graph="@navigation/nav_accept_loan" />
+
+</navigation>

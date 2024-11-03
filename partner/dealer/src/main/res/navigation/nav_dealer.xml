@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_dealer.xml"
+    app:startDestination="@id/dealerHomeFragment">
+
+    <fragment
+        android:id="@+id/dealerHomeFragment"
+        android:name="com.dkglabs.dealer.fragments.DealerHomeFragment"
+        android:label="fragment_dealer_home"
+        tools:layout="@layout/fragment_dealer_home" >
+        <action
+            android:id="@+id/action_dealerHomeFragment_to_homeMenuDialogFragment"
+            app:destination="@id/homeMenuDialogFragment" />
+        <action
+            android:id="@+id/action_dealerHomeFragment_to_loanApplicationActivity"
+            app:destination="@id/loanApplicationActivity" />
+        <action
+            android:id="@+id/action_dealerHomeFragment_to_collectionActivity"
+            app:destination="@id/collectionActivity" />
+        <action
+            android:id="@+id/action_dealerHomeFragment_to_loanDetailsActivity"
+            app:destination="@id/loanDetailsActivity" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/homeMenuDialogFragment"
+        android:name="com.dkglabs.dealer.dialogs.HomeMenuDialogFragment"
+        android:label="HomeMenuDialogFragment"
+        tools:layout="@layout/fragment_home_menu_dialog">
+        <action
+            android:id="@+id/action_homeMenuDialogFragment_to_logoutDialogFragment"
+            app:destination="@id/logoutDialogFragment" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/logoutDialogFragment"
+        android:name="com.dkglabs.account.dialogs.LogoutDialogFragment"
+        android:label="LogoutDialogFragment"
+        tools:layout="@layout/fragment_logout_dialog" />
+
+    <activity
+        android:id="@+id/loanApplicationActivity"
+        android:name="com.dkglabs.loan_application.activities.LoanApplicationActivity"
+        android:label="activity_loan_application"
+        tools:layout="@layout/activity_loan_application" />
+
+    <activity
+        android:id="@+id/collectionActivity"
+        android:name="com.dkglabs.dealer_collection.activities.CollectionActivity"
+        android:label="activity_collection"
+        tools:layout="@layout/activity_collection" />
+
+    <activity
+        android:id="@+id/loanDetailsActivity"
+        android:name="com.dkglabs.dealer_collection.activities.LoanDetailsActivity"
+        android:label="LoanDetailsActivity"
+        tools:layout="@layout/activity_loan_detail" />
+
+</navigation>

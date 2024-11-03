@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/collection_navigation_agent"
+    app:startDestination="@id/collectionAgentHome">
+
+    <fragment
+        android:id="@+id/collectionAgentHome"
+        android:name="com.dgklabs.collection_agent.Fragments.CollectionAgentHome"
+        android:label="fragment_collection_agent_home"
+        tools:layout="@layout/fragment_collection_agent_home" >
+        <action
+            android:id="@+id/action_collectionAgentHome_to_collectionTable"
+            app:destination="@id/collectionTable" />
+    </fragment>
+    <fragment
+        android:id="@+id/collectionTable"
+        android:name="com.dgklabs.collection_agent.Fragments.CollectionTable"
+        android:label="fragment_collection_table"
+        tools:layout="@layout/fragment_collection_table" >
+        <action
+            android:id="@+id/action_collectionTable_to_paymentDetailFrag"
+            app:destination="@id/paymentDetailFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentDetailFrag"
+        android:name="com.dgklabs.collection_agent.Fragments.PaymentDetailFrag"
+        android:label="fragment_payment_detail"
+        tools:layout="@layout/fragment_payment_detail" >
+        <action
+            android:id="@+id/action_paymentDetailFrag_to_digitalCollection"
+            app:destination="@id/digitalCollection" />
+        <action
+            android:id="@+id/action_paymentDetailFrag_to_cashCollection"
+            app:destination="@id/cashCollection" />
+    </fragment>
+    <fragment
+        android:id="@+id/digitalCollection"
+        android:name="com.dgklabs.collection_agent.Fragments.DigitalCollection"
+        android:label="fragment_digital_collection"
+        tools:layout="@layout/fragment_digital_collection" />
+    <fragment
+        android:id="@+id/cashCollection"
+        android:name="com.dgklabs.collection_agent.Fragments.CashCollection"
+        android:label="fragment_cash_collection"
+        tools:layout="@layout/fragment_cash_collection" />
+</navigation>

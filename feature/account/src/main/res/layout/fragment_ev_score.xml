@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.EvScoreFragment">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutEVScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/circleProgressBar"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="@dimen/xx_large"
+                app:cpb_background_progressbar_color="?colorOnSurfaceInverse"
+                app:cpb_background_progressbar_width="16dp"
+                app:cpb_indeterminate_mode="false"
+                app:cpb_progress="0"
+                app:cpb_progress_direction="to_right"
+                app:cpb_progress_max="100"
+                app:cpb_progressbar_color="?colorGreenContainer"
+                app:cpb_progressbar_width="12dp"
+                app:cpb_round_border="true"
+                app:cpb_start_angle="180"
+                app:elevation="@dimen/extra_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.05" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/evScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="?colorOnSecondaryContainer"
+                android:textSize="64sp"
+                app:layout_constraintBottom_toBottomOf="@+id/circleProgressBar"
+                app:layout_constraintEnd_toEndOf="@+id/circleProgressBar"
+                app:layout_constraintStart_toStartOf="@+id/circleProgressBar"
+                app:layout_constraintTop_toTopOf="@+id/circleProgressBar" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/evScoreProgress"
+                style="@style/SpinKitView.Large.ThreeBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:SpinKit_Color="?colorSecondaryContainer"
+                app:layout_constraintBottom_toBottomOf="@+id/circleProgressBar"
+                app:layout_constraintEnd_toEndOf="@+id/circleProgressBar"
+                app:layout_constraintStart_toStartOf="@+id/circleProgressBar"
+                app:layout_constraintTop_toTopOf="@+id/circleProgressBar" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/materialTextView1"
+                style="@style/TextAppHeadingSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/large"
+                android:layout_marginBottom="@dimen/large"
+                android:text="@string/your_ev_score"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/circleProgressBar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AccountCardStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="?colorSecondaryContainer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutEVScore">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/large">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView2"
+                    style="@style/TextAppMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam pellentesque nec nam aliquam. Bibendum at varius vel pharetra vel turpis nunc eget. Mi tempus imperdiet nulla malesuada pellentesque elit eget gravida." />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvLearnMore"
+                    style="@style/ButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoLink="all"
+                    android:linksClickable="false"
+                    android:selectAllOnFocus="false"
+                    android:text="@string/learn_more"
+                    android:textColor="?colorOnSecondaryContainer"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView2"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

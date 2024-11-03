@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.LoanCalculatorFragment">
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChart"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/large"
+            android:paddingTop="@dimen/large"
+            android:paddingEnd="@dimen/large"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvMonthlyPayment"
+                style="@style/TextMediumViewStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_monthly_payment"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvMonthlyPaymentValue"
+                style="@style/TextAppAction"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small"
+                android:text="@string/placeholder_amount"
+                android:textColor="?colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvMonthlyPayment"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMonthlyPaymentValue" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPrincipal"
+                style="@style/TextMediumViewStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:text="@string/text_principal"
+                app:layout_constraintEnd_toStartOf="@+id/tvTotalInterest"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPrincipalValue"
+                style="@style/TextAppAction"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholder_amount"
+                android:textColor="?colorPrimary"
+                app:layout_constraintStart_toStartOf="@+id/tvPrincipal"
+                app:layout_constraintTop_toBottomOf="@+id/tvPrincipal" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTotalInterest"
+                style="@style/TextMediumViewStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small"
+                android:layout_marginTop="@dimen/small"
+                android:layout_marginEnd="@dimen/small"
+                android:text="@string/text_total_interest"
+                app:layout_constraintEnd_toStartOf="@+id/tvTotalPayable"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvPrincipal"
+                app:layout_constraintTop_toBottomOf="@id/view" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTotalInterestValue"
+                style="@style/TextAppAction"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholder_amount"
+                android:textColor="?colorPrimary"
+                app:layout_constraintStart_toStartOf="@+id/tvTotalInterest"
+                app:layout_constraintTop_toBottomOf="@+id/tvTotalInterest" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTotalPayable"
+                style="@style/TextMediumViewStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:text="@string/text_total_payable"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvTotalInterest"
+                app:layout_constraintTop_toBottomOf="@id/view" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTotalPayableValue"
+                style="@style/TextAppAction"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholder_amount"
+                android:textColor="?colorPrimary"
+                app:layout_constraintStart_toStartOf="@+id/tvTotalPayable"
+                app:layout_constraintTop_toBottomOf="@+id/tvTotalPayable" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAmount"
+                style="@style/TextMediumViewStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_amount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAmountValue"
+                style="@style/TextAppAction"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small"
+                android:text="@string/placeholder_amount"
+                android:textColor="?colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvAmount"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekBarAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:indeterminate="false"
+                android:progressTint="?colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAmount" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvLength"
+                style="@style/TextAppMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/large"
+                android:text="@string/text_length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seekBarAmount" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvLengthValue"
+                style="@style/TextAppAction"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small"
+                android:layout_marginTop="@dimen/large"
+                android:text="@string/placeholder_length"
+                android:textColor="?colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvLength"
+                app:layout_constraintTop_toBottomOf="@id/seekBarAmount" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekBarLength"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:indeterminate="false"
+                android:progressTint="?colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLength" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvInterest"
+                style="@style/TextAppAction"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/large"
+                android:text="@string/text_interest"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seekBarLength" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvInterestValue"
+                style="@style/TextAppAction"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small"
+                android:layout_marginTop="@dimen/large"
+                android:text="@string/placeholder_interest"
+                android:textColor="?colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvInterest"
+                app:layout_constraintTop_toBottomOf="@id/seekBarLength" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekBarInterest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:indeterminate="false"
+                android:progressTint="?colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvInterest" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

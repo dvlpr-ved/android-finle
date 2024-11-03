@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dealer_collection_nav"
+    app:startDestination="@id/loanFragment">
+
+    <fragment
+        android:id="@+id/loanFragment"
+        android:name="com.dkglabs.dealer_collection.fragments.LoanDetailFragment"
+        android:label="LoanDetailFragment"
+        tools:layout="@layout/fragment_table_view">
+        <action
+            android:id="@+id/action_loanFragment_to_loanFilterDialogFragment"
+            app:destination="@id/loanFilterDialogFragment" />
+        <argument
+            android:name="filter"
+            app:argType="com.dkglabs.dealer_collection.model.LoanFilterModel" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/loanFilterDialogFragment"
+        android:name="com.dkglabs.dealer_collection.dialogs.LoanFilterDialogFragment"
+        android:label="fragment_loan_filter_dialog"
+        tools:layout="@layout/fragment_loan_filter_dialog">
+        <argument
+            android:name="filter"
+            app:argType="com.dkglabs.dealer_collection.model.LoanFilterModel" />
+    </dialog>
+
+</navigation>

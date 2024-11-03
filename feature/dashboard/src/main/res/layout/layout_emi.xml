@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/small">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/emiMonth"
+            style="@style/TextAppMediumRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/extra_small"
+            android:text="" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/extra_small"
+            android:shrinkColumns="1"
+            android:stretchColumns="1">
+
+            <TableRow>
+
+                <TextView
+                    style="@style/TextAppSmallRegular"
+                    android:padding="@dimen/extra_small"
+                    android:text="EMI" />
+
+                <TextView
+                    android:id="@+id/emi"
+                    style="@style/TextAppMediumSemiBold"
+                    android:layout_gravity="center_vertical|end"
+                    android:text=""
+                    android:textSize="@dimen/text_20" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/lateChargeRow"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/TextAppSmallRegular"
+                    android:padding="@dimen/extra_small"
+                    android:text="Late charge"
+                    android:textColor="?colorError" />
+
+                <TextView
+                    android:id="@+id/emiPaid"
+                    style="@style/TextAppMediumBold"
+                    android:layout_gravity="center_vertical|end"
+                    android:text=""
+                    android:textColor="?colorError" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/totalPayableRow"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/TextAppSmallRegular"
+                    android:padding="@dimen/extra_small"
+                    android:text="Total payable" />
+
+                <TextView
+                    android:id="@+id/pendingEmi"
+                    style="@style/TextAppMediumSemiBold"
+                    android:layout_gravity="center_vertical|end"
+                    android:text=""
+                    android:textSize="@dimen/text_20" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/TextAppSmallRegular"
+                    android:padding="@dimen/extra_small"
+                    android:text="Due date" />
+
+                <TextView
+                    android:id="@+id/dueDate"
+                    style="@style/TextAppSmallBold"
+                    android:layout_gravity="center_vertical|end"
+                    android:text="" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</layout>

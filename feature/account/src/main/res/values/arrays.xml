@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="faq_questions">
+        <item>@string/faq_qus_1</item>
+        <item>@string/faq_qus_2</item>
+        <item>@string/faq_qus_3</item>
+        <item>@string/faq_qus_4</item>
+        <item>@string/faq_qus_5</item>
+        <item>@string/faq_qus_6</item>
+        <item>@string/faq_qus_7</item>
+        <item>@string/faq_qus_8</item>
+        <item>@string/faq_qus_9</item>
+        <item>@string/faq_qus_10</item>
+        <item>@string/faq_qus_11</item>
+    </string-array>
+    <string-array name="faq_answers">
+        <item>@string/faq_ans_1</item>
+        <item>@string/faq_ans_2</item>
+        <item>@string/faq_ans_3</item>
+        <item>@string/faq_ans_4</item>
+        <item>@string/faq_ans_5</item>
+        <item>@string/faq_ans_6</item>
+        <item>@string/faq_ans_7</item>
+        <item>@string/faq_ans_8</item>
+        <item>@string/faq_ans_9</item>
+        <item>@string/faq_ans_10</item>
+        <item>@string/faq_ans_11</item>
+    </string-array>
+
+    <integer-array name="faq_icons">
+        <item>@drawable/ic_psycho_test</item>
+        <item>@drawable/ic_apply_loan</item>
+        <item>@drawable/ic_account</item>
+        <item>@drawable/ic_psycho_test</item>
+        <item>@drawable/ic_apply_loan</item>
+        <item>@drawable/ic_account</item>
+        <item>@drawable/ic_psycho_test</item>
+        <item>@drawable/ic_apply_loan</item>
+        <item>@drawable/ic_account</item>
+        <item>@drawable/ic_psycho_test</item>
+        <item>@drawable/ic_apply_loan</item>
+    </integer-array>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_test"
+    app:startDestination="@id/psychometricTestFragment">
+
+    <fragment
+        android:id="@+id/psychometricTestFragment"
+        android:name="com.dkglabs.psychometric_test.fragments.PsychometricTestFragment"
+        android:label="PsychometricTestFragment"
+        tools:layout="@layout/fragment_psychometric_test">
+        <action
+            android:id="@+id/action_psychometricTestFragment_to_psychometricTestResultFragment"
+            app:destination="@id/psychometricTestResultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/psychometricTestResultFragment"
+        android:name="com.dkglabs.psychometric_test.fragments.PsychometricTestResultFragment"
+        android:label="PsychometricTestResultFragment"
+        tools:layout="@layout/fragment_psychometric_test_result" />
+
+</navigation>

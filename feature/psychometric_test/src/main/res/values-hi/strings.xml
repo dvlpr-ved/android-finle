@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="start_test">परीक्षण शुरू करें</string>
+    <string name="learn_more"><u>और जानें...</u></string>
+    <string name="placeholder_question_no">सवाल %1$d</string>
+    <string name="psychometric_test_result_message">हेलो %1$s!\nआपका साइकोमेट्रिक परीक्षण परिणाम।</string>
+    <string name="message_psychometric_test">हेलो %1$s! अपना साइकोमेट्रिक टेस्ट पास करके अपने ऋण की संभावनाएँ बढ़ाएँ।</string>
+    <string name="text_try_again">पुनः प्रयास करें</string>
+    <string name="select_option_and_submit">विकल्प चुनें और सबमिट करें</string>
+    <string name="saving_answer">उत्तर सेव किया जा रहा है...</string>
+    <string name="text_score">स्कोर</string>
+    <string name="text_total">कुल</string>
+    <string name="text_correct">सही</string>
+    <string name="text_incorrect">गलत</string>
+    <string name="test_result_message">हुर्रे! आपने अपना परीक्षण पूरा कर लिया है।</string>
+</resources>

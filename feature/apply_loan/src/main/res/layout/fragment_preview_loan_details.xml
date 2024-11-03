@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.PreviewLoanDetailsFragment">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="loanResponse"
+            type="com.dkglabs.model.response.LoanResponse" />
+
+        <variable
+            name="isRefreshing"
+            type="boolean" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/horizontal_large"
+                android:paddingTop="@dimen/vertical_large"
+                android:paddingEnd="@dimen/horizontal_large"
+                android:paddingBottom="@dimen/vertical_large">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{isRefreshing ? View.VISIBLE : View.GONE}">
+
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/progress_circular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:indeterminate="true"
+                        app:indicatorColor="?colorPrimary"
+                        app:indicatorInset="@dimen/small"
+                        app:indicatorSize="36dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/progress_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Refreshing loan data"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/progress_circular"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Please review the following details before proceeding:"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small"
+                    android:collapseColumns="*"
+                    android:shrinkColumns="*">
+
+                    <!--Personal details-->
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small"
+                        android:text="Personal details :" />
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="User ID:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.userId}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <!-- Loan ID -->
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Loan ID:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.loanId}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <!-- Personal Details -->
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.personalDetails.name}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="First Name:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.personalDetails.firstName}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Last Name:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.personalDetails.lastName}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Date of Birth:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.personalDetails.dateOfBirth}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gender:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.personalDetails.gender}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Qualification:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.personalDetails.qualification}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Marital Status:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.personalDetails.maritalStatus}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Guardian's First Name:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.personalDetails.guardiansFirstName}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Guardian's Last Name:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.personalDetails.guardiansLastName}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Residence Ownership:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.personalDetails.residenceOwnership}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Year of Residence:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.personalDetails.yearOfResidence}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <!-- Contact Details -->
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small"
+                        android:text="Contect details :" />
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mobile Number:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.personalDetails.mobileNumber}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Phone Number:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.personalDetails.phoneNumber}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.contactDetails.email}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Residence Telephone:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.contactDetails.residenceTelephone}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Office Telephone:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.contactDetails.officeTelephone}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Office STD Code:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.contactDetails.officeStdCode}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Other Mobile Number:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.contactDetails.otherMobileNumber}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Residence STD Code:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.contactDetails.residenceStdCode}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Whatsapp No:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.contactDetails.whatsappNo}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <!-- Document Details -->
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small"
+                        android:text="Verification ID's details :" />
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Aadhaar No:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.documentDetails.aadhaarNo}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PAN No:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.documentDetails.panNo}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <!-- Address Details -->
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small"
+                        android:text=" Present address details :" />
+                    <!-- Present Address -->
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Address Line 1:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.addressDetails.presentAddressLineOne}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Address Line 2:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.addressDetails.presentAddressLineTwo}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="City:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.addressDetails.presentCity}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="District:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.addressDetails.presentDistrict}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="State:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.addressDetails.presentState}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Country:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.addressDetails.presentCountry}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Postal Address:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.addressDetails.presentPostalAddress}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <!-- Permanent Address -->
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small"
+                        android:text=" Permanent address details :" />
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Address Line 1:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.addressDetails.permanentAddressLineOne}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Address Line 2:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.addressDetails.permanentAddressLineTwo}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="City:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.addressDetails.permanentCity}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="District:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.addressDetails.permanentDistrict}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="State:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.addressDetails.permanentState}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Country:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.addressDetails.permanentCountry}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Postal Address:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.addressDetails.permanentPostalAddress}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <!-- Income Details -->
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small"
+                        android:text="Income details :" />
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Borrower Type:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.incomeDetails.borrowerType}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Annual Income:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.incomeDetails.annualIncome}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Organization Name:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.incomeDetails.orgName}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Profession:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.incomeDetails.profession}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Salary:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.incomeDetails.salary}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Other Loan:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.incomeDetails.otherLoan}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Other Loan Amount:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.incomeDetails.otherLoanAmount}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dependent Member:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.incomeDetails.dependentMember}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Earning Member First Name:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.incomeDetails.earningMemberFirstName}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Earning Member Last Name:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.incomeDetails.earningMemberLastName}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <!-- Bank Details -->
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small"
+                        android:text="Bank details :" />
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Account Holder Name:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.bankDetails.accHolderName}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Account Number:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.bankDetails.accountNumber}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bank Name:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.bankDetails.bankName}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bank Address:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.bankDetails.bankAddress}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="IFSC Code:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.bankDetails.ifscCode}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+
+                    <!-- Loan Details -->
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small"
+                        android:text="Loan details :" />
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Loan Request Amount:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{loanResponse.loanDetail.loanRequestAmt}"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    </TableRow>
+                </TableLayout>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small"
+                    android:text="Do you want to proceed?" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonNotOk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="?colorError"
+                        android:text="Not Ok"
+                        android:textColor="?colorOnError" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonOk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="Ok" />
+
+
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</layout>

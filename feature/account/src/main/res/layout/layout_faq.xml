@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/small">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/iconFaqCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small"
+        android:layout_marginTop="@dimen/large"
+        app:cardCornerRadius="@dimen/small_radius"
+        app:cardElevation="@dimen/extra_small"
+        app:layout_constraintBottom_toTopOf="@+id/tvFaqQus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iconFaq"
+            android:layout_width="@dimen/icon_size_faq"
+            android:layout_height="@dimen/icon_size_faq"
+            android:padding="@dimen/extra_small" />
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvFaqQus"
+        style="@style/TextAppAction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small"
+        app:layout_constraintBottom_toTopOf="@+id/tvFaqAns"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iconFaqCard" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvFaqAns"
+        style="@style/TextAppSmall"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small"
+        android:layout_marginEnd="@dimen/small"
+        android:layout_marginBottom="@dimen/small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFaqQus" />
+</androidx.constraintlayout.widget.ConstraintLayout>

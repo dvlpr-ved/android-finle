@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ESavari">
+        <activity
+            android:name=".activities.DealerEmiPayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CollectionActivity"
+            android:exported="false"
+            android:screenOrientation="unspecified" />
+        <activity
+            android:name=".activities.LoanDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="unspecified" />
+    </application>
+
+</manifest>

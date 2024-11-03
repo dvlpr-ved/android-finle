@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    namespace 'com.dkglabs.payment'
+    compileSdk 34
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdk 34
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(path: ':core:base')
+    implementation project(path: ':core:remote')
+    implementation project(path: ':core:model')
+
+
+    implementation libsCommon.appCompat
+    implementation libsCommon.material
+    implementation libsCommon.constraintlayout
+
+    implementation libsNavigation.navigationFragment
+    implementation libsNavigation.navigationUi
+
+    implementation libsSpinKit.spinKit
+
+    implementation cashfree.cashfreeApi
+    implementation lottie.lottieApi
+
+    testImplementation test.junit
+    androidTestImplementation androidTest.junit
+    androidTestImplementation androidTest.espresso
+}

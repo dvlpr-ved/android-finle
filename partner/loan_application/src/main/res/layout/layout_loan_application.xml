@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="loanApplicant"
+            type="com.dkglabs.model.response.LoanApplicantResponse" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textName"
+            style="@style/TextAppHeadCenter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/large"
+            android:layout_marginTop="@dimen/large"
+            android:padding="@dimen/extra_small"
+            android:text="@{loanApplicant.name}"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toStartOf="@+id/llLoanStatus"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llLoanStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/extra_large"
+            android:layout_marginEnd="@dimen/large"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textApproved"
+                style="@style/TextAppAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_check"
+                android:drawablePadding="@dimen/small"
+                android:text="@string/text_approved"
+                android:textAlignment="center"
+                android:textColor="?colorGreen"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textDisbursed"
+                style="@style/TextAppAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_check_filled"
+                android:drawablePadding="@dimen/small"
+                android:text="@string/text_disbursed"
+                android:textAlignment="center"
+                android:textColor="?colorOrange"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textPhone"
+            style="@style/TextAppSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/large"
+            android:layout_marginTop="@dimen/extra_small"
+            android:text="@{loanApplicant.phone}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textName" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textEmail"
+            style="@style/TextAppSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/large"
+            android:layout_marginTop="@dimen/extra_small"
+            android:text="@{loanApplicant.email}"
+            android:visibility="@{loanApplicant.email != null ? View.VISIBLE: View.GONE}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textPhone" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textLoan"
+            style="@style/TextAppSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/large"
+            android:layout_marginTop="@dimen/extra_small"
+            android:text="Loan Amount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textEmail" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textLoanAmount"
+            style="@style/TextAppMediumBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/large"
+            android:layout_marginTop="@dimen/extra_small"
+            android:layout_marginEnd="@dimen/large"
+            android:layout_marginBottom="@dimen/large"
+            android:text="@{String.valueOf(loanApplicant.loanAmount)}"
+            android:textColor="?colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonUpload"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textLoan" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEmi"
+            style="@style/ButtonStyleLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/emi"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/buttonUpload"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llLoanStatus" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonUpload"
+            style="@style/ButtonStyleLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/text_upload"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnEmi" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

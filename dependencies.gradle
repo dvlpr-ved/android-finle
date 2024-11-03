@@ -1,0 +1,139 @@
+ext.test = [
+        'junit': 'junit:junit:4.13.2'
+]
+
+ext.androidTest = [
+        'junit'   : 'androidx.test.ext:junit:1.2.1',
+        'espresso': 'androidx.test.espresso:espresso-core:3.6.1'
+]
+
+ext {
+    firebaseBomVersion = '33.1.2'
+
+    appCompatVersion = '1.7.0'
+    materialVersion = '1.12.0'
+    constraintlayoutVersion = '2.1.4'
+    navigationVersion = '2.7.7'
+    playServicesAuthVersion = '20.7.0'
+    playServicesAuthPhoneApiVersion = '18.0.1'
+    multidexVersion = '2.0.1'
+    swiperefreshlayoutVersion = '1.2.0-alpha01'
+    spinKitVersion = '1.4.0'
+    retrofitVersion = '2.9.0'
+    jacksonVersion = '2.4.0'
+    interceptorVersion = '4.4.1'
+    glideVersion = '4.16.0'
+    countryCodePickerVersion = '2.4.2'
+    otpViewVersion = 'v1.1.2'
+    circularprogressbarVersion = '3.1.0'
+    lifecycleVersion = '2.3.1'
+
+    libsCommon = [
+            appCompat       : "androidx.appcompat:appcompat:${appCompatVersion}",
+            material        : "com.google.android.material:material:${materialVersion}",
+            constraintlayout: "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}"
+    ]
+
+    libsNavigation = [
+            navigationFragment: "androidx.navigation:navigation-fragment:${navigationVersion}",
+            navigationUi      : "androidx.navigation:navigation-ui:${navigationVersion}"
+    ]
+
+    libsMultidex = [
+            multidex: "androidx.multidex:multidex:${multidexVersion}"
+    ]
+
+    libsFirebaseBom = [
+            firebaseBom: "com.google.firebase:firebase-bom:${firebaseBomVersion}"
+    ]
+
+    libsFirebase = [
+            analytics  : "com.google.firebase:firebase-analytics",
+            auth       : "com.google.firebase:firebase-auth",
+            crashlytics: "com.google.firebase:firebase-crashlytics",
+    ]
+
+    libsPlayServicesAuth = [
+            playServicesAuth        : "com.google.android.gms:play-services-auth:${playServicesAuthVersion}",
+            playServicesAuthApiPhone: "com.google.android.gms:play-services-auth-api-phone:${playServicesAuthPhoneApiVersion}"
+    ]
+
+    libsSwipeRefreshLayout = [
+            swiperefreshlayout: "androidx.swiperefreshlayout:swiperefreshlayout:${swiperefreshlayoutVersion}"
+    ]
+
+    libsSpinKit = [
+            spinKit: "com.github.ybq:Android-SpinKit:${spinKitVersion}"
+    ]
+
+    libsCountryCodePicker = [
+            countryCodePicker: "com.github.joielechong:countrycodepicker:${countryCodePickerVersion}"
+    ]
+
+    libsOtpView = [
+            otpView: "com.github.aabhasr1:OtpView:${otpViewVersion}"
+    ]
+
+    libsRetrofit = [
+            retrofit   : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            jackson    : "com.squareup.retrofit2:converter-jackson:${jacksonVersion}",
+            interceptor: "com.squareup.okhttp3:logging-interceptor:${interceptorVersion}"
+    ]
+
+    libsGlide = [
+            glide        : "com.github.bumptech.glide:glide:${glideVersion}",
+            glideCompiler: "com.github.bumptech.glide:compiler:${glideVersion}"
+    ]
+
+    libsCircularProgressBar = [
+            circularProgressBar: "com.mikhaellopez:circularprogressbar:${circularprogressbarVersion}"
+    ]
+
+    libsMPAndroidChart = [
+            mpAndroidChart: "com.github.PhilJay:MPAndroidChart:v3.1.0"
+    ]
+
+    libsUcrop = [
+            ucrop: "com.github.yalantis:ucrop:2.2.6"
+    ]
+
+    libsLifecycle = [
+            viewmodel: "androidx.lifecycle:lifecycle-viewmodel:$lifecycleVersion",
+            livedata : "androidx.lifecycle:lifecycle-livedata:$lifecycleVersion",
+            common   : "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
+    ]
+
+}
+
+ext {
+    cashfreeApiVersion = '2.1.4'
+    cashfree = [
+            'cashfreeApi': "com.cashfree.pg:api:${cashfreeApiVersion}"
+    ]
+}
+
+ext {
+    lottieVersion = '6.1.0'
+    tableViewVersion = 'v0.8.9.4'
+    lottie = [
+            'lottieApi': "com.airbnb.android:lottie:$lottieVersion"
+    ]
+
+    tableView = [
+            'tableViewApi': "com.github.evrencoskun:TableView:$tableViewVersion"
+    ]
+}
+ext {
+    room_version = '2.6.0'
+    room = [
+            runtime : "androidx.room:room-runtime:$room_version",
+            compiler: "androidx.room:room-compiler:$room_version"
+    ]
+}
+
+ext {
+    lombok_version = '1.18.30'
+    libsLombok = [
+            lombok: "org.projectlombok:lombok:$lombok_version"
+    ]
+}

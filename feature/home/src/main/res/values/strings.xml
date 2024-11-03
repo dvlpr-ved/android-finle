@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_loan_calculator">Loan Calculator</string>
+    <string name="text_amount">Amount</string>
+    <string name="text_length">Length</string>
+    <string name="text_interest">Interest</string>
+    <string name="text_principal">Principal</string>
+    <string name="text_total_interest">Total Interest</string>
+    <string name="text_total_payable">Total Payable</string>
+    <string name="text_monthly_payment">Monthly Payment (EMI)</string>
+
+    <string name="placeholder_length">%1$d Year</string>
+    <string name="placeholder_interest" translatable="false">%1$.1f %2$c</string>
+
+    <string name="offers_title_1">Say Goodbye to Money Worries – Our Loans Have You Covered!</string>
+    <string name="offers_title_2">Experience Financial Freedom with Our Fast and Easy Loan Process!</string>
+    <string name="offers_title_3">Unlock Your Dreams with Our Hassle-Free Loan Solutions!</string>
+
+    <string name="offers_description_1">Say goodbye to money worries and secure your financial future with our comprehensive loan options. From personal loans to home improvement loans, we have you covered with competitive interest rates, flexible repayment terms, and personalized solutions.</string>
+    <string name="offers_description_2">Experience financial freedom like never before with our fast and easy loan process. Whether it\'s for emergencies, investments, or personal expenses, our loan solutions provide the financial support you need with competitive interest rates and quick approval.</string>
+    <string name="offers_description_3">Apply for our hassle-free personal loan today and unlock the opportunity to turn your dreams into reality. Enjoy competitive interest rates, flexible repayment options, and a seamless application process.</string>
+
+    <string name="apply_loan">Apply Loan</string>
+    <string name="check_loan_eligibility">Loan Eligibility</string>
+    <string name="psychometric_test">Psychometric Test</string>
+    <string name="all_loan_doc">All Loan Document</string>
+    <string name="home_toolbar_name">Hi %1$s !</string>
+    <string name="principal">Principal</string>
+    <string name="total_interest">Total Interest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="loan_eligibility_details">Loan Eligibility Details</string>
+
+</resources>

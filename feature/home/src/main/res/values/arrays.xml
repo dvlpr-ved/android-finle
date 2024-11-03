@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="offer_title">
+        <item>@string/offers_title_1</item>
+        <item>@string/offers_title_2</item>
+        <item>@string/offers_title_3</item>
+    </string-array>
+    <string-array name="offer_description">
+        <item>@string/offers_description_1</item>
+        <item>@string/offers_description_2</item>
+        <item>@string/offers_description_3</item>
+    </string-array>
+
+    <integer-array name="offer_images">
+        <item>@drawable/offer_card_1</item>
+        <item>@drawable/offer_card_2</item>
+        <item>@drawable/offer_card_3</item>
+    </integer-array>
+</resources>

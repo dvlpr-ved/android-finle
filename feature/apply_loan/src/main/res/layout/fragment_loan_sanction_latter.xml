@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.LoanSanctionLatterFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/horizontal_large"
+            android:paddingTop="@dimen/vertical_large"
+            android:paddingEnd="@dimen/horizontal_large"
+            android:paddingBottom="@dimen/vertical_large">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppHeadingMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_sanction_latter" />
+
+            <com.github.barteksc.pdfviewer.PDFView
+                android:id="@+id/pdfViewSanctionLatter"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/small"
+                android:layout_weight="1" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkboxTermsConditions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="I have read and agreed to the above Terms &amp; Conditions and Declaration." />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonVideoKyc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:enabled="false"
+                android:text="@string/text_proceed_for_enach" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>
+</layout>

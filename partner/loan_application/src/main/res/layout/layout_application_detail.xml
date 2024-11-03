@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="completion"
+            type="String" />
+
+        <variable
+            name="progress"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/container">
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AccountCardStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/small">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/AccountOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{title}" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/extra_small"
+                    android:text="@{completion}" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/extra_small"
+                    android:layout_marginEnd="@dimen/extra_small"
+                    android:layout_marginBottom="@dimen/extra_small"
+                    android:progress="@{progress}"
+                    android:progressTint="?colorPrimary"
+                    app:trackColor="?colorPrimaryContainer"
+                    app:trackCornerRadius="@dimen/small"
+                    app:trackThickness="@dimen/small" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

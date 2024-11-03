@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="user_phone_placeholder" translatable="false">%1$s %2$s</string>
+
+    <string name="valid_phone_number">Please enter valid 10 digit number.</string>
+    <string name="incorrect_otp">OTP did not match.</string>
+    <string name="resend_otp_msg">OTP has just been resend!</string>
+    <string name="invalid_otp">Enter valid 6 digit OTP.</string>
+
+    <string name="verify_phone_msg">Verifying Phone number…</string>
+    <string name="progress_creating_account">Creating account…</string>
+    <string name="progress_signing_in">Signing in…</string>
+
+    <string name="first_name_msg">Enter your first name</string>
+    <string name="last_name_msg">Enter your last name</string>
+    <string name="enter_valid_email_msg">Enter valid email</string>
+
+    <string name="welcome_to_finle">Welcome to FINLE</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="create_account_message">Its take less than a minute.</string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="otp_verification_msg">We have sent the verification code to your Phone number</string>
+    <string name="phone_number_msg">Enter your phone number</string>
+    <string name="phone_number">Phone number</string>
+    <string name="phone_hint" translatable="false">9876543210</string>
+    <string name="get_otp">Get OTP</string>
+
+    <string name="hint_phone" translatable="false">+91 9876543210</string>
+    <string name="not_you">Not you?</string>
+    <string name="change">Change</string>
+    <string name="did_not_receive_otp">Did not receive OTP?</string>
+    <string name="resend">Resend</string>
+
+    <string name="text_first_name">First Name</string>
+    <string name="text_last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="email_hint" translatable="false">example@email.com</string>
+
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="password_hint" translatable="false">* * * * * *</string>
+    <string name="otp_go_back">Are you sure you want go back ?</string>
+    <string name="text_yes">Yes</string>
+    <string name="text_no">No</string>
+    <string name="change_phone_number">Change phone number</string>
+    <string name="password_16_char">Password contains at least 8 characters and at most 16 characters.</string>
+    <string name="password_not_matched">Password and confirm password did not match</string>
+    <string name="cancel_create_an_account">Cancel create an account</string>
+    <string name="cancel_create_account_msg">Do you really want to cancel creating an account?</string>
+
+    <string name="confirm_details">Confirm Details</string>
+    <string name="first_name_label">First Name:</string>
+    <string name="last_name_label">Last Name:</string>
+    <string name="email_label">Email:</string>
+
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="fragments.ProductHomeFragment">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/productLayout"
+                style="@style/TextAppAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/baseline_square"
+                android:drawablePadding="@dimen/medium"
+                android:drawableTint="?colorPrimaryContainer"
+                android:text="@string/text_products" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small"
+                android:elevation="@dimen/small"
+                android:gravity="end|center_vertical"
+                app:cardBackgroundColor="?colorSurface">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/productOption"
+                    style="@style/TextAppSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/large"
+                    android:layout_marginTop="@dimen/extra_small"
+                    android:layout_marginEnd="@dimen/large"
+                    android:layout_marginBottom="@dimen/xx_small"
+                    android:drawableEnd="@drawable/ic_down"
+                    android:drawablePadding="@dimen/large"
+                    android:text="@string/text_top_seller" />
+            </androidx.cardview.widget.CardView>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/layout_product" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

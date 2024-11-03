@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="text_processing_payment">Processing your payment</string>
+    <string name="text_processing_payment_msg">This process may take a few seconds, so please be patient.</string>
+    <string name="text_payment_success">Payment Successful</string>
+    <string name="text_payment_success_msg">Your payment has been processed!\nDetails of your transaction are included below</string>
+    <string name="text_payment_fail">Payment Failed</string>
+    <string name="text_payment_fail_msg">We can not process your payment!\nPlease try again.</string>
+</resources>

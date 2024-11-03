@@ -1,0 +1,105 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'androidx.navigation.safeargs'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    namespace 'com.dkglabs.e_savari'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.dkglabs.e_savari"
+        minSdkVersion 23
+        targetSdk 34
+        versionCode 8
+        versionName "beta-2.1.5"
+        archivesBaseName = "FinLe_${versionName}"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        resourceConfigurations += ["en", "hi"]
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('D:/DKG/esavarikey.jks')
+            storePassword 'esavari'
+            keyAlias = 'DKG_Labs'
+            keyPassword 'esavari'
+        }
+        debug {
+            storeFile file('D:/DKG/esavarikey.jks')
+            storePassword 'esavari'
+            keyAlias = 'DKG_Labs'
+            keyPassword 'esavari'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable false
+            jniDebuggable false
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable true
+            jniDebuggable true
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(path: ':core:base')
+    implementation project(path: ':core:model')
+    implementation project(path: ':core:remote')
+    implementation project(path: ':feature:auth')
+    implementation project(path: ':feature:home')
+    implementation project(path: ':feature:dashboard')
+    implementation project(path: ':feature:notification')
+    implementation project(path: ':feature:account')
+
+
+    implementation libsCommon.appCompat
+    implementation libsCommon.material
+    implementation libsCommon.constraintlayout
+
+    implementation libsMultidex.multidex
+
+    implementation platform(libsFirebaseBom.firebaseBom)
+    implementation libsFirebase.analytics
+    implementation libsFirebase.crashlytics
+
+    implementation libsNavigation.navigationFragment
+    implementation libsNavigation.navigationUi
+
+    implementation libsSpinKit.spinKit
+
+    implementation libsGlide.glide
+    annotationProcessor libsGlide.glideCompiler
+
+    testImplementation test.junit
+    androidTestImplementation androidTest.junit
+    androidTestImplementation androidTest.espresso
+}

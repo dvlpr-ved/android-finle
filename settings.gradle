@@ -1,0 +1,51 @@
+pluginManagement {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        gradlePluginPortal()
+        maven {
+            url "https://jitpack.io"
+        }
+        maven {
+            url "https://maven.cashfree.com/release"
+        }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven {
+            url "https://jitpack.io"
+            credentials { username authToken }
+        }
+        maven {
+            url "https://maven.cashfree.com/release"
+        }
+    }
+}
+
+rootProject.name = "e_savari"
+include ':app'
+include ':app_partner'
+include ':core:base'
+include ':core:data'
+include ':core:model'
+include ':core:remote'
+include ':feature:auth'
+include ':feature:home'
+include ':feature:account'
+include ':feature:dashboard'
+include ':feature:notification'
+include ':feature:search'
+include ':feature:apply_loan'
+include ':feature:psychometric_test'
+include ':feature:products'
+include ':feature:payment'
+include ':partner:dealer'
+include ':partner:loan_application'
+include ':partner:dealer_collection'
+include ':partner:collection_agent'

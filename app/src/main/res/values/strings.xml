@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name" translatable="false">FINLE</string>
+    <string name="app_name_text">FINLE</string>
+    <string name="app_slogan">Charging Your Drive, Earning Your Strive</string>
+    <string name="app_logo" translatable="false">App Logo</string>
+
+    <!-- App Guide Title -->
+    <string name="app_guide_title_1">"Unlock Your Dreams with Our Hassle-Free Loan Solutions!"</string>
+    <string name="app_guide_title_2">"Empower Your Financial Future with Our Tailored Loans!"</string>
+    <string name="app_guide_title_3">"Turn Your Goals into Reality with Our Flexible Loan Options!"</string>
+    <string name="app_guide_title_4">"Experience Financial Freedom with Our Fast and Easy Loan Process!"</string>
+    <string name="app_guide_title_5">"No More Compromises – Fulfill Your Desires with Our Loans!"</string>
+    <!-- App Guide Message -->
+    <string name="app_guide_message_1">Our exceptional loan solutions are here to make it happen, and we\'ve designed them with your convenience in mind.</string>
+    <string name="app_guide_message_2">With our tailored loans, we offer you the opportunity to take control of your financial future.</string>
+    <string name="app_guide_message_3">With our services, you can take control of your financial journey and make your dreams come true.</string>
+    <string name="app_guide_message_4">With our fast and easy loan process, we aim to provide you with the financial assistance you need, without the stress and complications often associated with traditional lending institutions.</string>
+    <string name="app_guide_message_5">Look no further! Our exceptional loan services are here to empower you and help you achieve everything you\'ve ever wished for.</string>
+
+    <string name="app_version">Version : %1$s</string>
+
+</resources>

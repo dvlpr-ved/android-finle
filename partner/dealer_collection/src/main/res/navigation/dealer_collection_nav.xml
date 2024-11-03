@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dealer_collection_nav"
+    app:startDestination="@id/collectionFragment">
+
+    <fragment
+        android:id="@+id/collectionFragment"
+        android:name="com.dkglabs.dealer_collection.fragments.CollectionFragment"
+        android:label="CollectionFragment"
+        tools:layout="@layout/fragment_table_view">
+        <action
+            android:id="@+id/action_collectionFragment_to_collectionFilterDialogFragment"
+            app:destination="@id/collectionFilterDialogFragment" />
+        <argument
+            android:name="filter"
+            app:argType="com.dkglabs.dealer_collection.model.CollectionFilterModel" />
+        <action
+            android:id="@+id/action_collectionFragment_to_nav_graph_dashboard"
+            app:destination="@id/nav_graph_dashboard" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/collectionFilterDialogFragment"
+        android:name="com.dkglabs.dealer_collection.dialogs.CollectionFilterDialogFragment"
+        android:label="fragment_collection_filter_dialog"
+        tools:layout="@layout/fragment_collection_filter_dialog">
+        <argument
+            android:name="filter"
+            app:argType="com.dkglabs.dealer_collection.model.CollectionFilterModel" />
+    </dialog>
+    <include app:graph="@navigation/nav_graph_dashboard" />
+</navigation>

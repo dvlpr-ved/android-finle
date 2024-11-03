@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.MyAccountFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/accountImage"
+                        style="@style/CircularImageViewStroke"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/placeholder_user"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+                    <com.github.ybq.android.spinkit.SpinKitView
+                        android:id="@+id/uploadingProgress"
+                        style="@style/SpinKitView.Large.ThreeBounce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        app:SpinKit_Color="?colorSecondaryContainer"
+                        app:layout_constraintBottom_toBottomOf="@+id/accountImage"
+                        app:layout_constraintEnd_toEndOf="@+id/accountImage"
+                        app:layout_constraintStart_toStartOf="@+id/accountImage"
+                        app:layout_constraintTop_toTopOf="@+id/accountImage" />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/buttonEdit"
+                        style="@style/CircularImageViewStroke"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?colorOnPrimaryContainer"
+                        android:contentDescription="@string/update_profile_image"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_camera"
+                        app:fabSize="mini"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:shapeAppearanceOverlay="@style/CircleImageView" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewName"
+                    style="@style/TextAppHeadCenter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large"
+                    android:hint="@string/user_name_placeholder"
+                    android:padding="@dimen/extra_small" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewPhone"
+                    style="@style/TextAppSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/user_account_phone_placeholder" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/large">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/TextAppSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/user_id" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/userId"
+                            style="@style/TextAppHeadingMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/TextAppSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small"
+                            android:text="@string/text_whatsapp_no" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/whatsAppNo"
+                            style="@style/TextAppHeadingMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/TextAppSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small"
+                            android:text="@string/text_email_id" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/email"
+                            style="@style/TextAppHeadingMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="@dimen/large"
+                        android:background="?colorSurfaceVariant" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/AccountHeadingSmall"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/large"
+                        android:text="@string/text_account_settings" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/AccountCardStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/large">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/small">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/cardUpdatePassword"
+                                style="@style/AccountOption"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/change_password" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </com.google.android.material.card.MaterialCardView>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

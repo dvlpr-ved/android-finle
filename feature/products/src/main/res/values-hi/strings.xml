@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_products">उत्पाद</string>
+    <string name="text_all">सभी</string>
+    <string name="text_best_deals">सर्वश्रेष्ठ सौदे</string>
+    <string name="text_top_seller">शीर्ष विक्रेता</string>
+    <string name="price_placeholder">₹ %1$s</string>
+</resources>

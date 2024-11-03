@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.PreImageUploadScreen">
+    <LinearLayout
+        android:id="@+id/parentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppHeadCenter"
+            android:textAlignment="textStart"
+            android:padding="@dimen/text_10"
+            android:text="@string/upload_image"
+            />
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:id="@+id/imgsTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/imgOne"
+                style="@style/ImageStyle" />
+            <ImageView
+                android:id="@+id/imgTwo"
+                style="@style/ImageStyle" />
+            <ImageView
+                android:id="@+id/imgThree"
+                style="@style/ImageStyle" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/imgFour"
+                style="@style/ImageStyle" />
+            <ImageView
+                android:id="@+id/imgFive"
+                style="@style/ImageStyle" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/txtNumberTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppHeadCenter"
+            android:textAlignment="textStart"
+            android:padding="@dimen/text_10"
+            android:text="@string/battery_number"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/parentNumber"
+            style="@style/TextInputOutlined"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_document_number"
+                android:inputType="textPostalAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSave"
+        style="@style/ButtonStyle"
+        android:layout_below="@id/parentLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="50dp"
+        android:text="@string/save"
+        />
+</RelativeLayout>

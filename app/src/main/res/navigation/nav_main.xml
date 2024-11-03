@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/languageFragment">
+
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.dkglabs.account.fragments.LanguageFragment"
+        android:label="LanguageFragment"
+        tools:layout="@layout/fragment_language">
+        <action
+            android:id="@+id/action_languageFragment_to_termsFragment"
+            app:destination="@id/termsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/termsFragment"
+        android:name="com.dkglabs.account.fragments.TermsFragment"
+        android:label="TermsFragment"
+        tools:layout="@layout/fragment_terms" />
+</navigation>

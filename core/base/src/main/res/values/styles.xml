@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppFontRegular" parent="Theme.ESavari">
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="AppFontMedium" parent="Theme.ESavari">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="AppFontSemiBold" parent="Theme.ESavari">
+        <item name="android:fontFamily">@font/poppins_semi_bold</item>
+    </style>
+
+    <style name="AppFontBold" parent="Theme.ESavari">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="Theme.AppToolBar" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:background">@color/md_theme_light_background</item>
+        <item name="android:actionButtonStyle">@style/myActionButtonStyle</item>
+        <item name="actionButtonStyle">@style/myActionButtonStyle</item>
+    </style>
+
+    <style name="myActionButtonStyle" parent="Widget.AppCompat.ActionButton">
+        <item name="android:minWidth">@dimen/icon_size</item>
+        <item name="android:maxWidth">@dimen/icon_size</item>
+        <item name="android:width">@dimen/icon_size</item>
+    </style>
+
+    <style name="AlertDialogStyle" parent="Theme.Material3.DayNight.Dialog.Alert">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="AppViewShadow" parent="Theme.ESavari">
+        <item name="android:shadowColor">?colorOnSurfaceVariant</item>
+        <item name="android:shadowDx">4</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">8</item>
+    </style>
+
+    <style name="TextViewAppGuideHead" parent="AppFontBold">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+
+    <style name="TextViewSplashHead" parent="TextViewAppGuideHead">
+        <item name="android:textSize">@dimen/text_24</item>
+        <item name="android:shadowColor">?colorOnBackground</item>
+    </style>
+
+    <style name="TextViewSplashMessage" parent="AppFontMedium">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+
+    <style name="TextSmallRegularCenter" parent="AppFontRegular">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+
+    <style name="RadioButtonStyle" parent="AppFontMedium">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:background">@drawable/radio_button_tick_white_box_selector</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingStart">@dimen/medium</item>
+        <item name="android:paddingEnd">@dimen/medium</item>
+        <item name="android:textColor">@drawable/radio_text_color</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_margin">@dimen/large</item>
+        <item name="android:elevation">@dimen/extra_small</item>
+    </style>
+
+    <style name="RadioButtonStyleGender" parent="AppFontMedium">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/radio_button_tick_white_box_selector</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingStart">@dimen/medium</item>
+        <item name="android:paddingEnd">@dimen/medium</item>
+        <item name="android:textColor">@drawable/radio_text_color</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:elevation">@dimen/extra_small</item>
+    </style>
+
+    <style name="RadioButtonProducts" parent="AppFontMedium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/radio_button_tick_white_box_selector</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingStart">@dimen/medium</item>
+        <item name="android:paddingEnd">@dimen/medium</item>
+        <item name="android:textColor">@drawable/radio_text_color</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:elevation">@dimen/extra_small</item>
+    </style>
+
+    <style name="RadioButtonStylePsychoTest" parent="AppFontMedium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/extra_small</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">@dimen/small</item>
+        <item name="android:paddingEnd">@dimen/small</item>
+        <item name="android:textColor">@drawable/radio_text_color</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:elevation">@dimen/extra_small</item>
+        <item name="buttonTint">?colorPrimary</item>
+    </style>
+
+    <style name="TextAppSmall" parent="AppFontRegular">
+        <item name="android:paddingBottom">@dimen/xx_small</item>
+        <item name="android:paddingTop">@dimen/xx_small</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">@dimen/text_13</item>
+    </style>
+
+    <style name="TextAppRegular" parent="AppFontRegular">
+        <item name="android:paddingBottom">@dimen/xx_small</item>
+        <item name="android:paddingTop">@dimen/xx_small</item>
+        <item name="android:paddingStart">@dimen/xx_small</item>
+        <item name="android:textSize">@dimen/text_12</item>
+    </style>
+
+    <style name="TextAppRegular.ViewStart" parent="TextAppRegular">
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="TextAppRegular.Center" parent="TextAppRegular">
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="ButtonStyle" parent="AppFontMedium">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/text_14</item>
+    </style>
+
+    <style name="ButtonStyleDark" parent="ButtonStyle">
+        <item name="android:backgroundTint">?colorPrimary</item>
+        <item name="android:textColor">?colorOnPrimary</item>
+    </style>
+
+    <style name="ButtonStyleLight" parent="ButtonStyle">
+        <item name="android:backgroundTint">?colorPrimaryContainer</item>
+        <item name="android:textColor">?colorOnPrimaryContainer</item>
+    </style>
+
+    <style name="ButtonStyleError" parent="ButtonStyle">
+        <item name="android:backgroundTint">?colorErrorContainer</item>
+        <item name="android:textColor">?colorOnErrorContainer</item>
+    </style>
+
+    <style name="ExtButtonStyleDark" parent="ButtonStyleDark">
+        <item name="iconTint">?colorOnPrimary</item>
+    </style>
+
+    <style name="ExtButtonStyleLight" parent="ButtonStyleLight">
+        <item name="iconTint">?colorOnPrimaryContainer</item>
+    </style>
+
+
+    <style name="TextAppHeadCenter" parent="AppFontBold">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/text_20</item>
+    </style>
+
+    <style name="TextAppHeadingMedium" parent="AppFontMedium">
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.LabelLarge</item>
+    </style>
+
+    <style name="AccountCardStyle" parent="Theme.ESavari">
+        <item name="cardElevation">@dimen/extra_small</item>
+        <item name="cardCornerRadius">@dimen/small_radius</item>
+        <item name="android:layout_marginStart">@dimen/large</item>
+        <item name="android:layout_marginEnd">@dimen/large</item>
+    </style>
+
+    <style name="SliderCardStyle" parent="Theme.ESavari">
+        <item name="cardElevation">@dimen/extra_small</item>
+        <item name="cardCornerRadius">@dimen/small_radius</item>
+        <item name="android:layout_margin">@dimen/small</item>
+    </style>
+
+    <style name="AccountHeadingSmall" parent="AppFontMedium">
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">@dimen/text_18</item>
+        <item name="android:layout_marginStart">@dimen/large</item>
+        <item name="android:layout_marginEnd">@dimen/large</item>
+    </style>
+
+    <style name="AccountOptionNoNavigation" parent="AppFontMedium">
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:drawablePadding">@dimen/small</item>
+        <item name="android:paddingTop">@dimen/extra_small</item>
+        <item name="android:paddingBottom">@dimen/extra_small</item>
+        <item name="android:layout_marginStart">@dimen/extra_small</item>
+        <item name="android:layout_marginEnd">@dimen/extra_small</item>
+        <item name="android:layout_marginTop">@dimen/extra_small</item>
+        <item name="android:layout_marginBottom">@dimen/extra_small</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="AccountOption" parent="AccountOptionNoNavigation">
+        <item name="android:drawableEnd">@drawable/ic_navigate_next</item>
+    </style>
+
+    <style name="ActionUploadOption" parent="AccountOptionNoNavigation">
+        <item name="android:drawableEnd">@drawable/ic_upload</item>
+    </style>
+
+    <style name="TextAppMessage" parent="AppFontRegular">
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/text_16</item>
+    </style>
+
+    <style name="TextAppHeadingSemiBold" parent="AppFontSemiBold">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/text_18</item>
+    </style>
+    <style name="TextAppSmallRegular" parent="AppFontRegular">
+        <item name="android:textSize">@dimen/text_14</item>
+    </style>
+
+    <style name="TextAppMediumRegular" parent="AppFontRegular">
+        <item name="android:textSize">@dimen/text_16</item>
+    </style>
+    <style name="TextAppSmallBold"  parent="AppFontRegular">
+        <item name="android:textSize">@dimen/text_16</item>
+    </style>
+    <style name="TextAppMediumSemiBold" parent="AppFontSemiBold">
+        <item name="android:textSize">@dimen/text_16</item>
+    </style>
+
+    <style name="TextAppMediumBold" parent="AppFontBold">
+        <item name="android:textSize">@dimen/text_16</item>
+    </style>
+
+    <style name="TextSmallBold" parent="AppFontSemiBold">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/text_14</item>
+    </style>
+
+    <style name="TextMediumViewStart" parent="AppFontRegular">
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">@dimen/text_16</item>
+    </style>
+
+    <style name="TextAppAction" parent="AppFontMedium">
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">@dimen/text_16</item>
+    </style>
+
+    <style name="TextInputOutlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="hintEnabled">false</item>
+    </style>
+
+    <style name="AutoCompleteTextViewOutlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="hintEnabled">false</item>
+    </style>
+
+    <style name="CircularImageViewStroke" parent="AppViewShadow">
+        <item name="strokeColor">?attr/colorOnPrimaryContainer</item>
+        <item name="strokeWidth">@dimen/stroke_small</item>
+        <item name="android:elevation">@dimen/extra_small</item>
+        <item name="android:padding">@dimen/extra_small</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="CircleImageView" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ProductImageAppearance" parent="">
+        <item name="cornerSize">4%</item>
+    </style>
+
+
+    <style name="GridViewCard" parent="Theme.ESavari">
+        <item name="android:layout_margin">@dimen/small</item>
+        <item name="android:backgroundTint">?colorTertiaryContainer</item>
+        <item name="cardCornerRadius">@dimen/small</item>
+        <item name="cardElevation">@dimen/extra_small</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_rowWeight">1</item>
+    </style>
+
+    <style name="GridViewDealer" parent="Theme.ESavari">
+        <item name="android:layout_margin">@dimen/small</item>
+        <item name="cardCornerRadius">@dimen/small</item>
+        <item name="cardElevation">@dimen/extra_small</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_rowWeight">1</item>
+    </style>
+
+    <style name="CardViewCollection" parent="Theme.ESavari">
+        <item name="android:layout_margin">@dimen/small</item>
+        <item name="cardCornerRadius">@dimen/small</item>
+        <item name="cardElevation">@dimen/extra_small</item>
+    </style>
+
+    <style name="PaymentCard" parent="Theme.ESavari">
+        <item name="android:layout_margin">@dimen/small</item>
+        <item name="android:backgroundTint">?colorSecondaryContainer</item>
+        <item name="cardCornerRadius">@dimen/small</item>
+        <item name="cardElevation">@dimen/extra_small</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_rowWeight">1</item>
+    </style>
+
+    <style name="GridViewAddress" parent="Theme.ESavari">
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_rowWeight">1</item>
+    </style>
+
+    <style name="GridViewCardScore" parent="Theme.ESavari">
+        <item name="android:layout_margin">@dimen/small</item>
+        <item name="android:backgroundTint">?colorSecondaryContainer</item>
+        <item name="cardCornerRadius">@dimen/small</item>
+        <item name="cardElevation">@dimen/extra_small</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_rowWeight">1</item>
+    </style>
+
+    <style name="GridViewIcon" parent="Theme.ESavari">
+        <item name="android:layout_marginTop">@dimen/large</item>
+        <item name="android:layout_width">@dimen/icon_size_card</item>
+        <item name="android:layout_height">@dimen/icon_size_card</item>
+        <item name="android:backgroundTint">?colorOnTertiaryContainer</item>
+    </style>
+
+    <style name="GridViewDealerIcon" parent="Theme.ESavari">
+        <item name="android:layout_margin">@dimen/large</item>
+        <item name="android:layout_width">@dimen/icon_size_dealer_card</item>
+        <item name="android:layout_height">@dimen/icon_size_dealer_card</item>
+        <item name="android:backgroundTint">?colorOnTertiaryContainer</item>
+    </style>
+
+    <style name="GridViewText" parent="AppFontMedium">
+        <item name="android:layout_marginBottom">@dimen/large</item>
+        <item name="android:layout_marginTop">@dimen/large</item>
+        <item name="android:padding">@dimen/extra_small</item>
+        <item name="android:textColor">?colorOnTertiaryContainer</item>
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="GridViewTextScore" parent="AppFontMedium">
+        <item name="android:layout_marginTop">@dimen/large</item>
+        <item name="android:padding">@dimen/extra_small</item>
+        <item name="android:textColor">?colorOnSecondaryContainer</item>
+        <item name="android:textSize">@dimen/text_32</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="FaqImageViewShapeAppearance" parent="AppViewShadow">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/small_radius</item>
+    </style>
+    <string name="buttonColor">?colorPrimary</string>
+</resources>

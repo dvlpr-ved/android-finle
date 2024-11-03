@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.PayEmiFragment">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/llPay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/radioGroupEmi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/large"
+                    android:layout_marginTop="@dimen/large"
+                    android:layout_marginEnd="@dimen/large"
+                    android:checkedButton="@id/allEmi">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/allEmi"
+                        style="@style/RadioButtonStylePsychoTest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:tag="all"
+                        android:text="Pay all due EMIs" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/oneEmi"
+                        style="@style/RadioButtonStylePsychoTest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:tag="one"
+                        android:text="Pay one EMI" />
+                </RadioGroup>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/PaymentCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/large">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/large"
+                        android:orientation="vertical"
+                        android:stretchColumns="1">
+
+                        <TableRow>
+
+                            <TextView
+                                style="@style/TextAppSmallRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/text_emi_amount"
+                                android:textColor="?colorOnSecondaryContainer" />
+
+                            <TextView
+                                android:id="@+id/emi"
+                                style="@style/TextAppMediumSemiBold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/placeholder_rupee"
+                                android:textAlignment="viewEnd"
+                                android:textColor="?colorOnSecondaryContainer" />
+
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="@dimen/small">
+
+                            <TextView
+                                style="@style/TextAppSmallRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/text_due_emi"
+                                android:textColor="?colorOnSecondaryContainer" />
+
+                            <TextView
+                                android:id="@+id/dueEmi"
+                                style="@style/TextAppMediumSemiBold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/text_emi"
+                                android:textAlignment="viewEnd"
+                                android:textColor="?colorOnSecondaryContainer" />
+
+                        </TableRow>
+                    </TableLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/large"
+                    android:layout_marginEnd="@dimen/large"
+                    android:shrinkColumns="2"
+                    android:stretchColumns="2">
+
+                    <TableRow
+                        android:id="@+id/tableRowSub">
+
+                        <TextView
+                            style="@style/TextAppSmallRegular"
+                            android:padding="@dimen/extra_small"
+                            android:text="Sub total" />
+
+                        <TextView
+                            style="@style/TextAppSmallRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" - "
+                            android:textColor="?colorOnSecondaryContainer" />
+
+                        <TextView
+                            android:id="@+id/subTotal"
+                            style="@style/TextAppMediumSemiBold"
+                            android:layout_gravity="center_vertical|end"
+                            android:text="@string/placeholder_rupee"
+                            android:textSize="@dimen/text_20" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/lateChargeRow"
+                        android:layout_marginTop="@dimen/small">
+
+                        <TextView
+                            style="@style/TextAppSmallRegular"
+                            android:padding="@dimen/extra_small"
+                            android:text="Late charge"
+                            android:textColor="?colorError" />
+
+
+                        <TextView
+                            style="@style/TextAppSmallRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" - "
+                            android:textColor="?colorError" />
+
+                        <TextView
+                            android:id="@+id/lateCharge"
+                            style="@style/TextAppMediumBold"
+                            android:layout_gravity="center_vertical|end"
+                            android:text="@string/placeholder_rupee"
+                            android:textColor="?colorError" />
+                    </TableRow>
+
+                    <TableRow android:layout_marginTop="@dimen/small">
+
+                        <TextView
+                            style="@style/TextAppSmallRegular"
+                            android:padding="@dimen/extra_small"
+                            android:text="Total Payable" />
+
+                        <TextView
+                            style="@style/TextAppSmallRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" - "
+                            android:textColor="?colorOnSecondaryContainer" />
+
+                        <TextView
+                            android:id="@+id/dueAmount"
+                            style="@style/TextAppMediumSemiBold"
+                            android:layout_gravity="center_vertical|end"
+                            android:text="@string/placeholder_rupee"
+                            android:textSize="@dimen/text_20" />
+                    </TableRow>
+                </TableLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llPay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/totalPay"
+                style="@style/TextAppMediumSemiBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/large"
+                android:layout_weight="1"
+                android:text="@string/placeholder_pay_due" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonPay"
+                style="@style/ButtonStyleLight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/large"
+                android:layout_weight="1"
+                android:text="@string/pay_now" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

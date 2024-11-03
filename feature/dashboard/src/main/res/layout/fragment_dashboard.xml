@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.DashboardFragment">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llProgressHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                android:id="@+id/llProgress"
+                layout="@layout/layout_progressbar" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/llDashboard"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/large">
+
+                <!--
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/userName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/margin_16"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="@string/hi_user_name"
+                                android:textSize="@dimen/text_24" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/TextAppAction"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/margin_16"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:layout_marginEnd="@dimen/margin_16"
+                                android:layout_weight="1"
+                                android:drawableStart="@drawable/baseline_square"
+                                android:drawablePadding="@dimen/padding_12"
+                                android:drawableTint="?colorTertiaryContainer"
+                                android:text="@string/text_loan_details" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginStart="@dimen/margin_16"
+                                android:layout_marginTop="@dimen/margin_4"
+                                android:layout_marginEnd="@dimen/margin_16"
+                                android:background="?colorTertiaryContainer" />
+                -->
+
+                <include
+                    android:id="@+id/loanProgress"
+                    layout="@layout/layout_loan_progress" />
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large"
+                    android:columnCount="2"
+                    android:paddingStart="@dimen/small"
+                    android:paddingEnd="@dimen/small">
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/GridViewCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/small"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/loanAmount"
+                                style="@style/TextAppMediumSemiBold"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/placeholder_rupee"
+                                android:textSize="@dimen/text_32" />
+
+                            <TextView
+                                style="@style/TextAppSmallRegular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/text_loan_amount" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/GridViewCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/small"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/loanInterest"
+                                style="@style/TextAppMediumSemiBold"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/placeholder_rupee"
+                                android:textSize="@dimen/text_32" />
+
+                            <TextView
+                                style="@style/TextAppSmallRegular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/loan_interest" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </GridLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/large"
+                    android:elevation="@dimen/small"
+                    app:cardBackgroundColor="?colorSurface"
+                    app:cardCornerRadius="@dimen/small">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/TextAppAction"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/small"
+                                android:layout_marginEnd="@dimen/small"
+                                android:layout_weight="1"
+                                android:drawableStart="@drawable/baseline_square"
+                                android:drawablePadding="@dimen/medium"
+                                android:drawableTint="?colorPrimaryContainer"
+                                android:text="@string/text_emi" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/viewAllEmi"
+                                style="@style/TextAppAction"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginEnd="@dimen/small"
+                                android:padding="@dimen/extra_small"
+                                android:text="@string/view_all"
+                                android:textColor="?colorPrimary" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="@dimen/extra_small"
+                            android:background="?colorPrimaryContainer" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.github.mikephil.charting.charts.PieChart
+                                android:id="@+id/pieChart"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_margin="@dimen/large"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="1:1"
+                                app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/large"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    style="@style/TextAppSmallRegular"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/extra_small"
+                                    android:text="Total EMI" />
+
+                                <TextView
+                                    android:id="@+id/totalEmi"
+                                    style="@style/TextAppSmallBold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="48" />
+
+                                <TextView
+                                    style="@style/TextAppSmallRegular"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/small"
+                                    android:padding="@dimen/extra_small"
+                                    android:text="EMI Paid" />
+
+                                <TextView
+                                    android:id="@+id/emiPaid"
+                                    style="@style/TextAppSmallBold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="23" />
+
+                                <TextView
+                                    style="@style/TextAppSmallRegular"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/small"
+                                    android:padding="@dimen/extra_small"
+                                    android:text="Due EMI" />
+
+                                <TextView
+                                    android:id="@+id/pendngEmi"
+                                    style="@style/TextAppSmallBold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="25" />
+                            </LinearLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/large"
+                    android:elevation="@dimen/small"
+                    app:cardBackgroundColor="?colorSurface"
+                    app:cardCornerRadius="@dimen/small">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small"
+                        android:layout_marginBottom="@dimen/large"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/TextAppAction"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/small"
+                                android:layout_marginEnd="@dimen/small"
+                                android:layout_weight="1"
+                                android:drawableStart="@drawable/baseline_square"
+                                android:drawablePadding="@dimen/medium"
+                                android:drawableTint="?colorErrorContainer"
+                                android:text="@string/text_due_emi" />
+
+                            <androidx.constraintlayout.utils.widget.MotionButton
+                                android:id="@+id/payEmi"
+                                style="@style/ButtonStyleLight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/small"
+                                android:layout_marginEnd="@dimen/small"
+                                android:text="Pay now" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="@dimen/extra_small"
+                            android:background="?colorErrorContainer" />
+
+                        <FrameLayout
+                            android:id="@+id/due_emi_fragment_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/extra_small" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/large"
+                    android:shrinkColumns="1"
+                    android:stretchColumns="1">
+
+                    <TableRow>
+
+                        <TextView
+                            style="@style/TextAppSmallRegular"
+                            android:padding="@dimen/extra_small"
+                            android:text="@string/loan_number" />
+
+                        <TextView
+                            android:id="@+id/loanNumber"
+                            style="@style/TextAppSmallBold"
+                            android:layout_gravity="center_vertical|end"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            style="@style/TextAppSmallRegular"
+                            android:padding="@dimen/extra_small"
+                            android:text="@string/account_number" />
+
+                        <TextView
+                            android:id="@+id/loanAccountNumber"
+                            style="@style/TextAppSmallBold"
+                            android:layout_gravity="center_vertical|end"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            style="@style/TextAppSmallRegular"
+                            android:padding="@dimen/extra_small"
+                            android:text="@string/loan_type" />
+
+                        <TextView
+                            android:id="@+id/loanType"
+                            style="@style/TextAppSmallBold"
+                            android:layout_gravity="center_vertical|end"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            style="@style/TextAppSmallRegular"
+                            android:padding="@dimen/extra_small"
+                            android:text="@string/loan_tenure" />
+
+                        <TextView
+                            android:id="@+id/loanTenure"
+                            style="@style/TextAppSmallBold"
+                            android:layout_gravity="center_vertical|end"
+                            android:text="0" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            style="@style/TextAppSmallRegular"
+                            android:padding="@dimen/extra_small"
+                            android:text="@string/interest_rate" />
+
+                        <TextView
+                            android:id="@+id/interestRate"
+                            style="@style/TextAppSmallBold"
+                            android:layout_gravity="center_vertical|end"
+                            android:text="0.0 %" />
+                    </TableRow>
+                </TableLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

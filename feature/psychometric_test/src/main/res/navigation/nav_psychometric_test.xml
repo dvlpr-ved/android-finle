@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_psychometric_test"
+    app:startDestination="@id/psychometricStartTestFragment">
+    <fragment
+        android:id="@+id/psychometricStartTestFragment"
+        android:name="com.dkglabs.psychometric_test.fragments.PsychometricStartTestFragment"
+        android:label="PsychometricStartTestFragment"
+        tools:layout="@layout/fragment_psychometric_start_test">
+        <action
+            android:id="@+id/action_psychometricStartTestFragment_to_navTest"
+            app:destination="@id/nav_test"
+            app:popUpTo="@id/psychometricStartTestFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <include app:graph="@navigation/nav_test" />
+
+</navigation>

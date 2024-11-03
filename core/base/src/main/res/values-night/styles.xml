@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.AppToolBar" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:background">@color/md_theme_dark_background</item>
+        <item name="android:actionButtonStyle">@style/myActionButtonStyle</item>
+        <item name="actionButtonStyle">@style/myActionButtonStyle</item>
+    </style>
+
+    <style name="AlertDialogStyle" parent="Theme.Material3.DayNight.Dialog.Alert">
+        <item name="android:windowBackground">@color/light_black</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+</resources>

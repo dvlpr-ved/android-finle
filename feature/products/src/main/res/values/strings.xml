@@ -1,0 +1,7 @@
+<resources>
+    <string name="text_products">Products</string>
+    <string name="text_all">All</string>
+    <string name="text_best_deals">Best Deals</string>
+    <string name="text_top_seller">Top Seller</string>
+    <string name="price_placeholder">₹ %1$s</string>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dealer_emi_payment_nav"
+    app:startDestination="@id/nav_graph_dashboard">
+    <fragment
+        android:id="@+id/dealerEmiDetais2"
+        android:name="com.dkglabs.dealer_collection.fragments.DealerEmiDetais"
+        android:label="DealerEmiDetais" >
+        <action
+            android:id="@+id/action_dealerEmiDetais2_to_paymentDealerEmiFragment"
+            app:destination="@id/paymentDealerEmiFragment" />
+        <argument
+            android:name="EmiDetails"
+            app:argType="com.dkglabs.dealer_collection.model.EmiPayModel" />
+        <action
+            android:id="@+id/action_dealerEmiDetais2_to_nav_graph_dashboard"
+            app:destination="@id/nav_graph_dashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentDealerEmiFragment"
+        android:name="com.dkglabs.dealer_collection.fragments.PaymentDealerEmiFragment"
+        android:label="fragment_payment_dealer_emi"
+        tools:layout="@layout/fragment_payment_dealer_emi" >
+        <action
+            android:id="@+id/action_paymentDealerEmiFragment_to_paymentMethodFragment2"
+            app:destination="@id/paymentMethodFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentMethodFragment2"
+        android:name="com.dkglabs.dashboard.fragments.PaymentMethodFragment"
+        android:label="PaymentMethodFragment" />
+    <include app:graph="@navigation/nav_graph_dashboard" />
+</navigation>

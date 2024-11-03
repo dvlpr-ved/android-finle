@@ -1,0 +1,27 @@
+<resources>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="submit">Submit</string>
+    <string name="send_sms">Send Sms</string>
+    <string name="amount">Amount</string>
+    <string name="payment_method">Payment Method</string>
+
+    <style name="textStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/md_theme_dark_surface</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="cardViewStyle">
+        <item name="android:layout_margin">15dp</item>
+        <item name="cardCornerRadius">10dp</item>
+    </style>
+    <string-array name="paymentMethod">
+        <item>UPI</item>
+        <item>Cash</item>
+    </string-array>
+
+</resources>

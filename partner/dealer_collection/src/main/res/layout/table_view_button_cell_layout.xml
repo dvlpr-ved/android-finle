@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/cell_container"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="wrap_content"
+              android:layout_height="@dimen/cell_height"
+              android:gravity="center"
+              android:orientation="vertical">
+    <Button
+        style="@style/ButtonStyleLight"
+        android:id="@+id/buttonPay"
+        android:layout_marginStart="@dimen/small"
+        android:layout_marginEnd="@dimen/small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/text_pay"
+        android:text="@string/text_pay"/>
+
+</LinearLayout>
+

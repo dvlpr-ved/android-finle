@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.ApplicationDetailFragment">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="loanApplicantResponse"
+            type="com.dkglabs.model.response.LoanApplicantResponse" />
+    </data>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include
+            android:id="@+id/progressLayout"
+            android:visibility="gone"
+            layout="@layout/layout_progressbar"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textName"
+                style="@style/TextAppHeadCenter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/large"
+                android:layout_marginTop="@dimen/large"
+                android:layout_marginEnd="@dimen/large"
+                android:padding="@dimen/extra_small"
+                android:text="@{loanApplicantResponse.name}"
+                android:textAlignment="viewStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textLoanId"
+                style="@style/TextAppSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/large"
+                android:layout_marginTop="@dimen/extra_small"
+                android:text="@{loanApplicantResponse.loanId}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textName" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textPhone"
+                style="@style/TextAppSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/large"
+                android:layout_marginTop="@dimen/extra_small"
+                android:text="@{loanApplicantResponse.phone}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textLoanId" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textEmail"
+                style="@style/TextAppSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/large"
+                android:layout_marginTop="@dimen/extra_small"
+                android:text="@{loanApplicantResponse.email}"
+                android:visibility="@{loanApplicantResponse.email != null ? View.VISIBLE: View.GONE}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textPhone" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textLoan"
+                style="@style/TextAppSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/large"
+                android:layout_marginTop="@dimen/extra_small"
+                android:text="Loan Amount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textEmail" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textLoanAmount"
+                style="@style/TextAppMediumBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/large"
+                android:text="@{String.valueOf(loanApplicantResponse.loanAmount)}"
+                android:textColor="?colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/textLoan"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textLoan" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textStatus"
+                style="@style/TextAppSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/large"
+                android:layout_marginTop="@dimen/extra_small"
+                android:text="Loan Status"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textLoan" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llLoanStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/large"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textStatus">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textApproved"
+                    style="@style/TextAppSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_check"
+                    android:drawablePadding="@dimen/small"
+                    android:text="Approved"
+                    android:textAlignment="center"
+                    android:textColor="?colorGreen"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textDisbursed"
+                    style="@style/TextAppSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_check_filled"
+                    android:drawablePadding="@dimen/small"
+                    android:text="Disbursed"
+                    android:textAlignment="center"
+                    android:textColor="?colorOrange"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/small"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textStatus">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include
+                        android:id="@+id/preDisbursement"
+                        layout="@layout/layout_application_detail" />
+
+                    <include
+                        android:id="@+id/loanFulfilment"
+                        layout="@layout/layout_application_detail" />
+
+                    <include
+                        android:id="@+id/postDisbursement"
+                        layout="@layout/layout_application_detail" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,50 @@
+<resources>
+
+    <string name="check_icon">\u2713</string>
+
+    <string name="text_language">Language</string>
+    <string name="language_english" translatable="false">English</string>
+    <string name="language_hindi" translatable="false">हिन्दी</string>
+
+    <string name="progress_loading">Loading…</string>
+    <string name="generic_error_msg">There is some problem. Please try later.</string>
+    <string name="no_internet_message">Looks like there is no internet connection. Please try again!</string>
+
+    <string name="home">Home</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="notification">Notification</string>
+    <string name="account">Account</string>
+
+    <string name="text_save">Save</string>
+    <string name="text_accept">Accept</string>
+    <string name="text_deny">Deny</string>
+    <string name="text_permission">Permission</string>
+    <string name="text_retry">Retry</string>
+    <string name="text_finish">Finish</string>
+    <string name="text_submit">Submit</string>
+    <string name="text_done">Done</string>
+    <string name="text_next">Next</string>
+    <string name="text_verify">Verify</string>
+    <string name="text_upload">Upload</string>
+    <string name="text_back">Back</string>
+    <string name="text_continue">Continue</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="text_theme">Theme</string>
+    <string name="text_logout">Logout</string>
+    <string name="text_privacy_policy">Privacy Policy</string>
+    <string name="text_terms_of_services">Terms of Services</string>
+    <string name="text_faq">FAQ</string>
+    <string name="text_exit">Exit</string>
+    <string name="text_dismiss">Dismiss</string>
+    <string name="text_name">Name</string>
+    <string name="text_skip">Skip</string>
+    <string name="need_permission">Need Permissions</string>
+    <string name="permission_message">This app needs permission to use this feature. You can grant them in app settings.</string>
+    <string name="goto_settings">GOTO SETTINGS</string>
+    <string name="text_okay">Okay</string>
+    <string name="text_change">Change</string>
+    <string name="text_confirm">Confirm</string>
+    <string name="text_try_again">Try Again</string>
+
+    <string name="placeholder_amount">₹ %1$.2f</string>
+</resources>

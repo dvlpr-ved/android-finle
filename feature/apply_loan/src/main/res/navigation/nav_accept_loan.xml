@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_accept_loan"
+    app:startDestination="@id/loanStatusFragment">
+
+    <fragment
+        android:id="@+id/loanStatusFragment"
+        android:name="com.dkglabs.apply_loan.fragments.LoanStatusFragment"
+        android:label="fragment_loan_status"
+        tools:layout="@layout/fragment_loan_status">
+        <action
+            android:id="@+id/action_loanStatusFragment_to_loanKfsFragment"
+            app:destination="@id/loanKfsFragment" />
+        <action
+            android:id="@+id/action_loanStatusFragment_to_enachStatusFragment"
+            app:destination="@id/enachStatusFragment" />
+    </fragment>
+
+    <fragment
+
+        android:id="@+id/loanKfsFragment"
+        android:name="com.dkglabs.apply_loan.fragments.LoanKfsFragment"
+        android:label="LoanKfsFragment"
+        tools:layout="@layout/fragment_loan_kfs">
+        <argument
+            android:name="loanProcessingDocument"
+            app:argType="com.dkglabs.model.response.LoanProcessingDocument" />
+        <action
+            android:id="@+id/action_loanKfsFragment_to_loanSanctionLatterFragment"
+            app:destination="@id/loanSanctionLatterFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loanSanctionLatterFragment"
+        android:name="com.dkglabs.apply_loan.fragments.LoanSanctionLatterFragment"
+        android:label="LoanSanctionLatterFragment"
+        tools:layout="@layout/fragment_loan_sanction_latter">
+        <argument
+            android:name="loanProcessingDocument"
+            app:argType="com.dkglabs.model.response.LoanProcessingDocument" />
+        <action
+            android:id="@+id/action_loanSanctionLatterFragment_to_emiCollectionFragment"
+            app:destination="@id/emiCollectionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loanVideoKYCFragment"
+        android:name="com.dkglabs.apply_loan.fragments.LoanVideoKYCFragment"
+        android:label="loanVideoKYCFragment"
+        tools:layout="@layout/fragment_loan_video_kyc">
+        <action
+            android:id="@+id/action_loanVideoKYCFragment_to_chooseImageMethodFragment"
+            app:destination="@id/chooseImageMethodFragment2" />
+        <action
+            android:id="@+id/action_loanVideoKYCFragment_to_fragmentWebVideoCalling"
+            app:destination="@id/fragmentWebVideoCalling" />
+        <action
+            android:id="@+id/action_loanVideoKYCFragment_to_eSignDocFragment"
+            app:destination="@id/eSignDocFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentWebVideoCalling"
+        android:name="com.dkglabs.apply_loan.fragments.WebVideoCalling"
+        android:label="fragment_web_video_calling"
+        tools:layout="@layout/fragment_web_video_calling">
+        <action
+            android:id="@+id/action_fragmentWebVideoCalling_to_kycResultFragment"
+            app:destination="@id/kycResultFragment" />
+        <argument
+            android:name="kycReqModel"
+            app:argType="com.dkglabs.apply_loan.model.KYCVideoRequestModel" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/kycResultFragment"
+        android:name="com.dkglabs.apply_loan.fragments.KycResultFragment"
+        android:label="fragment_kyc_result"
+        tools:layout="@layout/fragment_kyc_result">
+        <argument
+            android:name="kycCallResult"
+            app:argType="com.dkglabs.model.response.KycResultModel" />
+        <action
+            android:id="@+id/action_kycResultFragment_to_loanVideoKYCFragment"
+            app:destination="@id/loanVideoKYCFragment" />
+        <action
+            android:id="@+id/action_kycResultFragment_to_eSignDocFragment"
+            app:destination="@id/eSignDocFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/emiCollectionFragment"
+        android:name="com.dkglabs.apply_loan.fragments.EmiCollectionFragment"
+        android:label="fragment_emi_collection"
+        tools:layout="@layout/fragment_emi_collection">
+        <argument
+            android:name="loanResponse"
+            app:argType="com.dkglabs.model.response.LoanResponse" />
+        <action
+            android:id="@+id/action_emiCollectionFragment_to_enachStatusFragment"
+            app:destination="@id/enachStatusFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/chooseImageMethodFragment2"
+        android:name="com.dkglabs.apply_loan.dialogs.ChooseImageMethodFragment"
+        android:label="ChooseImageMethodFragment"
+        tools:layout="@layout/fragment_choose_image_method" />
+    <fragment
+        android:id="@+id/enachStatusFragment"
+        android:name="com.dkglabs.apply_loan.fragments.EnachStatusFragment"
+        android:label="fragment_enach_status"
+        tools:layout="@layout/fragment_enach_status">
+        <action
+            android:id="@+id/action_enachStatusFragment_to_loanVideoKYCFragment"
+            app:destination="@id/loanVideoKYCFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eSignDocFragment"
+        android:name="com.dkglabs.apply_loan.fragments.ESignDocFragment"
+        android:label="fragment_e_sign_doc"
+        tools:layout="@layout/fragment_e_sign_doc" />
+</navigation>

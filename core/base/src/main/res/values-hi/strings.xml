@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="check_icon">\u2713</string>
+    <string name="text_language">भाषा</string>
+    <string name="progress_loading">लोड हो रहा है…</string>
+    <string name="generic_error_msg">कुछ दिक्कत है. बाद में कोशिश करें।</string>
+    <string name="no_internet_message">ऐसा लगता है जैसे कोई इंटरनेट कनेक्शन नहीं है. कृपया पुन: प्रयास करें!</string>
+    <string name="home">होम</string>
+    <string name="dashboard">डैशबोर्ड</string>
+    <string name="notification">सूचनाएं</string>
+    <string name="account">अकाउंट</string>
+    <string name="text_save">सुरक्षित करें</string>
+    <string name="text_accept">स्वीकार करें</string>
+    <string name="text_deny">अस्वीकार</string>
+    <string name="text_permission">अनुमति</string>
+    <string name="text_retry">पुन: प्रयास करें</string>
+    <string name="text_finish">पूर्ण करें</string>
+    <string name="text_submit">सबमिट करेंं</string>
+    <string name="text_done">पूर्ण</string>
+    <string name="text_next">अगला</string>
+    <string name="text_verify">सत्यापित करें</string>
+    <string name="text_upload">अपलोड करें</string>
+    <string name="text_back">पीछे</string>
+    <string name="text_continue">जारी रखें</string>
+    <string name="text_cancel">रद्द करें</string>
+    <string name="text_theme">थीम</string>
+    <string name="text_logout">लॉग आउट</string>
+    <string name="text_privacy_policy">गोपनीयता नीति</string>
+    <string name="text_terms_of_services">सेवाओं की शर्तें</string>
+    <string name="text_faq">सामान्य प्रश्न</string>
+    <string name="text_exit">बाहर निकले</string>
+    <string name="text_dismiss">खारिज करें</string>
+    <string name="text_name">नाम</string>
+    <string name="text_skip">"स्किप "</string>
+    <string name="need_permission">अनुमति चाहिए</string>
+    <string name="permission_message">इस ऐप को इस सुविधा का उपयोग करने के लिए अनुमति की आवश्यकता है। आप उन्हें ऐप सेटिंग में अनुदान दे सकते हैं।</string>
+    <string name="goto_settings">सेटिंग्स में जाओ</string>
+    <string name="text_okay">ठीक</string>
+</resources>

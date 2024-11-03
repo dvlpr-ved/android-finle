@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.KycResultFragment">
+
+    <TextView
+        android:id="@+id/txtFaceMatchScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_10"
+        android:layout_marginTop="@dimen/text_10"
+        android:layout_marginEnd="@dimen/text_10"
+        android:layout_marginBottom="@dimen/text_10"
+        android:text="@string/face_match"
+        android:textStyle="bold"
+        android:padding="@dimen/text_20"
+        android:textColor="@color/color_green"
+        android:textSize="30sp" />
+    <TextView
+        android:layout_below="@+id/txtFaceMatchScore"
+        android:id="@+id/txtAudioMatchScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_10"
+        android:layout_marginTop="@dimen/text_10"
+        android:layout_marginEnd="@dimen/text_10"
+        android:layout_marginBottom="@dimen/text_10"
+        android:padding="@dimen/text_20"
+        android:text="@string/audio_match"
+        android:textStyle="bold"
+        android:textColor="@color/color_green"
+        android:textSize="30sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="36dp"
+        android:textAllCaps="false"
+        android:text="Proceed for eSign" />
+
+</RelativeLayout>

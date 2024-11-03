@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/small"
+            android:orientation="vertical"
+            android:padding="@dimen/large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:context=".dialogs.BankDetailsFragment">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/bankVerified"
+                style="@style/TextAppMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:buttonTint="?colorGreen"
+                android:checked="true"
+                android:text="@string/text_bank_account_verified"
+                android:textColor="?colorGreen" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/bankNotVerified"
+                style="@style/TextAppMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:buttonTint="?colorError"
+                android:checked="false"
+                android:text="@string/text_bank_account_not_verified"
+                android:textColor="?colorError"
+                android:visibility="gone" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:text="@string/text_bank_details" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/accountNumber"
+                style="@style/TextAppHeadingMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/ifscCode"
+                style="@style/TextAppHeadingMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/accountHolderName"
+                style="@style/TextAppHeadingMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonChange"
+            style="@style/ButtonStyleLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="@dimen/large"
+            android:layout_marginTop="@dimen/xx_large"
+            android:layout_marginBottom="@dimen/xx_large"
+            android:text="@string/text_change"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat2" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonContinue"
+            style="@style/ButtonStyleDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/xx_large"
+            android:layout_marginEnd="@dimen/large"
+            android:layout_marginBottom="@dimen/xx_large"
+            android:text="@string/text_continue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

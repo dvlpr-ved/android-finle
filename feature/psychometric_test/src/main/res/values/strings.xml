@@ -1,0 +1,16 @@
+<resources>
+    <string name="start_test">Start Test</string>
+    <string name="learn_more"><u>Learn more…</u></string>
+
+    <string name="placeholder_question_no">Question %1$d</string>
+    <string name="psychometric_test_result_message">Hey %1$s! \nYour Psychometric test result</string>
+    <string name="message_psychometric_test">Hey %1$s! Increase your loan chances by passing your Psychometric Test</string>
+    <string name="text_try_again">Try again</string>
+    <string name="select_option_and_submit">Select option and submit</string>
+    <string name="saving_answer">Saving answer...</string>
+    <string name="text_score">Score</string>
+    <string name="text_total">Total</string>
+    <string name="text_correct">Correct</string>
+    <string name="text_incorrect">Incorrect</string>
+    <string name="test_result_message">Hurray! You have completed your test.</string>
+</resources>
